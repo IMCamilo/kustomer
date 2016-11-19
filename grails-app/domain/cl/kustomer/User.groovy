@@ -15,6 +15,6 @@ class User {
     String fechaCreacion = new Date()
 
     static constraints = {
-        genero inList: ["Feminino","Masculino"]
+        genero inList: ["No Aplica","Feminino","Masculino"]
     }
 }
