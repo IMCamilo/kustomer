@@ -12,7 +12,7 @@ class User {
     String representante
     String correo
     Boolean esEmpresa
-    String fechaCreacion = new Date()
+    Date fechaCreacion = new Date()
 
     static constraints = {
         genero inList: ["No Aplica","Feminino","Masculino"]
