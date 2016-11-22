@@ -13,8 +13,6 @@ buildscript {
 version "0.1"
 group "kustomer"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
@@ -33,6 +31,7 @@ dependencyManagement {
 }
 
 dependencies {
+    compile 'org.grails.plugins:spring-security-core:3.1.1'
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"

@@ -2,6 +2,7 @@ package cl.kustomer
 
 class Project {
 
+    String codeProject
     String nombre
     //cliente
     Integer presupuesto
@@ -11,5 +12,6 @@ class Project {
     Date fechaTermino
 
     static constraints = {
+        codeProject blank: false, unique: true
     }
 }
