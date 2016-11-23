@@ -1,8 +1,6 @@
 package cl.kustomer
 
-class DetailProject {
-
-    //
+class ProjectDetail {
 
     static constraints = {
     }
