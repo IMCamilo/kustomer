@@ -14,6 +14,8 @@ class Party {
 	Boolean isCompany
 	Date creationDate = new Date()
 
+	static hasMany = [projectDetail: ProjectDetail]
+
     static constraints = {
     }
 }

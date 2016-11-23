@@ -2,7 +2,9 @@ package cl.kustomer
 
 class Document {
 
-    Integer nDocumento
+    Integer numberDocument
+
+    static belongsTo = [projectDetail: ProjectDetail]
 
     static constraints = {
     }
