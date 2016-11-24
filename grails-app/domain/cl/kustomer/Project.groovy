@@ -3,12 +3,13 @@ package cl.kustomer
 class Project {
 
     String codeProject
-    String nombre
-    Integer presupuesto
-    Integer montoAPagar
-    String descripcion
-    Date fechaInicio
-    Date fechaTermino
+    String name
+    Integer totalAmount
+    String desciption
+    Date fromDate
+    Date thruDate
+    String createdBy
+    Date creationDate = new Date()
 
     static hasMany = [projectDetail: ProjectDetail, projectTask: ProjectTask]
 
