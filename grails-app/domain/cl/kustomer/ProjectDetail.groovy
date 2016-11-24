@@ -1,5 +1,10 @@
 package cl.kustomer
 
+/**
+ * Clase ProjectDetail.
+ * Referente a tabla detalles de proyectos, guardando relación
+ * entre participantes y proyectos.
+ */
 class ProjectDetail {
 
     String description

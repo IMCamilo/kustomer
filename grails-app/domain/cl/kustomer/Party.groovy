@@ -1,5 +1,10 @@
 package cl.kustomer
 
+/**
+ * Clase Party.
+ * Referente a tabla de participantes del sistema. Toda entidad
+ * que participa en el sistema, clientes, administradores, empresas.
+ */
 class Party {
 
 	String partyId //rut
@@ -10,9 +15,9 @@ class Party {
 	String address
 	String phone
 	String mail
-	Boolean isCompany
 	String representative
 	String createdBy
+	Boolean isCompany
 	Date creationDate = new Date()
 
 	static hasMany = [projectDetail: ProjectDetail]

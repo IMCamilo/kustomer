@@ -1,5 +1,9 @@
 package cl.kustomer
 
+/**
+ * Clase ProjectTask.
+ * Referente a las tareas de los proyectos.
+ */
 class ProjectTask {
 
     String name

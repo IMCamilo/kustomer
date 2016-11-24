@@ -1,14 +1,18 @@
 package cl.kustomer
 
+/**
+ * Clase Project.
+ * Referente a tabla de proyectos.
+ */
 class Project {
 
     String codeProject
     String name
-    Integer totalAmount
     String desciption
+    String createdBy
+    Integer totalAmount
     Date fromDate
     Date thruDate
-    String createdBy
     Date creationDate = new Date()
 
     static hasMany = [projectDetail: ProjectDetail, projectTask: ProjectTask]
