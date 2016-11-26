@@ -23,5 +23,6 @@ class Party {
 	static hasMany = [projectDetail: ProjectDetail]
 
     static constraints = {
+		gender inList : ['No Aplica','Masculino','Feminino']
     }
 }
