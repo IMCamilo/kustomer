@@ -11,7 +11,7 @@ class ProjectDetail {
     String createdBy
     Date creationDate = new Date()
 
-    static hasMany = [document: Document, budget: Budget]
+    static hasMany = [document: Document, projectBudget: ProjectBudget]
     static belongsTo = [party: Party, project: Project]
 
     static constraints = {

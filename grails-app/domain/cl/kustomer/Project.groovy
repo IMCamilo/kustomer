@@ -8,7 +8,7 @@ class Project {
 
     String codeProject
     String name
-    String desciption
+    String description
     String createdBy
     Integer totalAmount
     Date fromDate

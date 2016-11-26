@@ -1,10 +1,6 @@
-package cl.kustomerd
+package cl.kustomer
 
-/**
- * Clase Budget.
- * Referente a tabla de presupuestos para proyectos.
- */
-class Budget {
+class ProjectBudget {
 
     String name
     String description
