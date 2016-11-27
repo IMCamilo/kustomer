@@ -3,7 +3,6 @@
 <head>
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
-
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
@@ -18,24 +17,11 @@
         <section class="row colset-2-its">
             <div id="controllers" role="navigation">
                 <ul>
-                    <li class="controller">
-                        <a href="/document/index">Documentos</a>
-                    </li>
-                    <li class="controller">
-                        <a href="/party/index">Participantes</a>
-                    </li>
-                    <li class="controller">
-                        <a href="/projectBudget/index">Presupuestos</a>
-                    </li>
-                    <li class="controller">
-                        <a href="/project/index">Proyectos</a>
-                    </li>
-                    <li class="controller">
-                        <a href="/projectDetail/index">Detalles Proyecto</a>
-                    </li>
-                    <li class="controller">
-                        <a href="/projectTask/index">Tareas Proyecto</a>
-                    </li>
+                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                        <li class="controller">
+                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
+                        </li>
+                    </g:each>
                 </ul>
             </div>
         </section>

@@ -13,15 +13,17 @@ class User implements Serializable {
 
 	String username
 	String password
+	String partyId
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
 
-	User(String username, String password) {
+	User(String username, String password, String partyId) {
 		this()
 		this.username = username
 		this.password = password
+		this.partyId = partyId
 	}
 
 	Set<Role> getAuthorities() {

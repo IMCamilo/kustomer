@@ -5,104 +5,98 @@ import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
-class PartyController {
+class RoleController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
-        if (isLoggedIn()) {
-            println "autenticater : ${getAuthenticatedUser()}"
-            println "=> : "
-            println "autenticater : ${getAuthenticatedUser()}"
-            println "=> : "
-         }
         params.max = Math.min(max ?: 10, 100)
-        respond Party.list(params), model:[partyCount: Party.count()]
+        respond Role.list(params), model:[roleCount: Role.count()]
     }
 
     @Secured(['ROLE_ADMIN'])
-    def show(Party party) {
-        respond party
+    def show(Role role) {
+        respond role
     }
 
     @Secured(['ROLE_ADMIN'])
     def create() {
-        respond new Party(params)
+        respond new Role(params)
     }
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def save(Party party) {
-        if (party == null) {
+    def save(Role role) {
+        if (role == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        if (party.hasErrors()) {
+        if (role.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond party.errors, view:'create'
+            respond role.errors, view:'create'
             return
         }
 
-        party.save flush:true
+        role.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'party.label', default: 'Party'), party.id])
-                redirect party
+                flash.message = message(code: 'default.created.message', args: [message(code: 'role.label', default: 'Role'), role.id])
+                redirect role
             }
-            '*' { respond party, [status: CREATED] }
+            '*' { respond role, [status: CREATED] }
         }
     }
 
     @Secured(['ROLE_ADMIN'])
-    def edit(Party party) {
-        respond party
+    def edit(Role role) {
+        respond role
     }
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def update(Party party) {
-        if (party == null) {
+    def update(Role role) {
+        if (role == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        if (party.hasErrors()) {
+        if (role.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond party.errors, view:'edit'
+            respond role.errors, view:'edit'
             return
         }
 
-        party.save flush:true
+        role.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'party.label', default: 'Party'), party.id])
-                redirect party
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'role.label', default: 'Role'), role.id])
+                redirect role
             }
-            '*'{ respond party, [status: OK] }
+            '*'{ respond role, [status: OK] }
         }
     }
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def delete(Party party) {
+    def delete(Role role) {
 
-        if (party == null) {
+        if (role == null) {
             transactionStatus.setRollbackOnly()
             notFound()
             return
         }
 
-        party.delete flush:true
+        role.delete flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'party.label', default: 'Party'), party.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'role.label', default: 'Role'), role.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -113,7 +107,7 @@ class PartyController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'party.label', default: 'Party'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'role.label', default: 'Role'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

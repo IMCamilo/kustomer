@@ -11,6 +11,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
+	[pattern: '/dbconsole/**',   access: ['permitAll']],
 	[pattern: '/**/js/**',       access: ['permitAll']],
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
@@ -26,3 +27,6 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
+
+grails.plugin.springsecurity.rememberMe.persistent = true
+grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'cl.kustomer.PersistentLogin'
