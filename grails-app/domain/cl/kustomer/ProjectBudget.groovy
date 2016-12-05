@@ -1,5 +1,9 @@
 package cl.kustomer
 
+/**
+ * Clase ProjectBudget.
+ * Referente a tabla presupuestos de proyectos.
+ */
 class ProjectBudget {
 
     String name

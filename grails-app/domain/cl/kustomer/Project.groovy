@@ -10,6 +10,7 @@ class Project {
     String name
     String description
     String createdBy
+    Boolean paidByCompleteTask
     Integer totalAmount
     Date fromDate
     Date thruDate
