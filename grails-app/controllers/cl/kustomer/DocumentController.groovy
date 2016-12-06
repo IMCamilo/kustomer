@@ -24,7 +24,7 @@ class DocumentController {
     def create() {
         respond new Document(params)
     }
-        
+
     @Transactional
     @Secured(['ROLE_ADMIN'])
     def save(Document document) {

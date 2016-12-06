@@ -40,13 +40,22 @@
                         </ul>
                     </li>
                 </ul>
-                 <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                            role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="project" action="index">Proyectos</g:link></li>
                             <li><g:link controller="projectBudget" action="index">Presupuestos</g:link></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">Asignaciones<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><g:link controller="projectDetail" action="index">Gestionar</g:link></li>
                         </ul>
                     </li>
                 </ul>
