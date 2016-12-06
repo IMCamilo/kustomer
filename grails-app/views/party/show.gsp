@@ -19,7 +19,20 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="party" />
+            
+                <br>Genero ${this.party?.gender}
+                <br>Apellido ${this.party?.lastName}
+                <br>Direccion ${this.party?.address}
+                <br>Correo ${this.party?.mail}
+                <br>Es empresa ${this.party?.isCompany}
+                <br>Nombre ${this.party?.firstName}
+                <br>Nacionalidad ${this.party?.nationality}
+                <br>Telefono ${this.party?.phone}
+                <br>Creado por ${this.party?.createdBy}
+                <br>Rut ${this.party?.partyId}
+                <br>Representante ${this.party?.representative}
+
+
             <g:form resource="${this.party}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.party}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
