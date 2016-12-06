@@ -26,9 +26,12 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                <fieldset class="form">
-                    <f:all bean="projectDetail"/>
-                </fieldset>
+               
+                <br>Created By <input type="text" name="createdBy" value="" required="" id="createdBy" />
+                <br>Description <input type="text" name="description" value="" required="" id="description" />
+                <br>Project DESPLEGABLE PROYECTO
+                <br>Party DESPLEGABLE PARTY
+
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

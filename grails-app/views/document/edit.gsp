@@ -9,7 +9,7 @@
         <a href="#edit-document" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
@@ -28,9 +28,13 @@
             </g:hasErrors>
             <g:form resource="${this.document}" method="PUT">
                 <g:hiddenField name="version" value="${this.document?.version}" />
-                <fieldset class="form">
-                    <f:all bean="document"/>
-                </fieldset>
+                <br>creado por
+                <input type="text" name="createdBy" value="${this.document?.createdBy}" required="" id="createdBy" />
+                <br>Number Document
+                <input type="number" name="numberDocument" value="${this.document?.number}" required="" id="numberDocument" />
+                <br>Project Detail (autocompletable de detalle de proyecto)
+                o en su defecto en el detalle de proyecto (como entidad)
+                un "generar docuemnto" para que genere un documento.
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>

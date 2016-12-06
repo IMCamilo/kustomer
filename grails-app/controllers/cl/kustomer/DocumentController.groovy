@@ -19,12 +19,12 @@ class DocumentController {
     def show(Document document) {
         respond document
     }
-
+        
     @Secured(['ROLE_ADMIN'])
     def create() {
         respond new Document(params)
     }
-
+        
     @Transactional
     @Secured(['ROLE_ADMIN'])
     def save(Document document) {

@@ -12,10 +12,14 @@ class PartyController {
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         if (isLoggedIn()) {
-            println "autenticater : ${getAuthenticatedUser()}"
-            println "=> : "
-            println "autenticater : ${getAuthenticatedUser()}"
-            println "=> : "
+            println "====>"+getAuthenticatedUser()
+            println "====>"+getPrincipal()
+            println "=================================="
+            getPrincipal().each {
+                println it
+            }
+
+            println "=================================="
          }
         params.max = Math.min(max ?: 10, 100)
         respond Party.list(params), model:[partyCount: Party.count()]

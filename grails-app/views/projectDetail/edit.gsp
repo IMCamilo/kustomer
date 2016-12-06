@@ -28,9 +28,10 @@
             </g:hasErrors>
             <g:form resource="${this.projectDetail}" method="PUT">
                 <g:hiddenField name="version" value="${this.projectDetail?.version}" />
-                <fieldset class="form">
-                    <f:all bean="projectDetail"/>
-                </fieldset>
+                <br>Created By <input type="text" name="createdBy" value="${this.projectDetail?.createdBy}" required="" id="createdBy" />
+                <br>Description <input type="text" name="description" value="${this.projectDetail?.description}" required="" id="description" />
+                <br>Project DESPLEGABLE PROYECTO
+                <br>Party DESPLEGABLE PARTY
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>
