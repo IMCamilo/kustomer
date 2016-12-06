@@ -45,9 +45,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                             role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Crear</a></li>
-                            <li><a href="#">Lista</a></li>
-                            <li><a href="#">Presupuesto</a></li>
+                            <li><g:link controller="project" action="index">Proyectos</g:link></li>
+                            <li><g:link controller="projectBudget" action="index">Presupuestos</g:link></li>
                         </ul>
                     </li>
                 </ul>
@@ -56,10 +55,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                             role="button" aria-haspopup="true" aria-expanded="false">Participantes<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Crear</a></li>
-                            <li><a href="#">Lista</a></li>
-                            <li><a href="#">Usuarios</a></li>
-                            <li><a href="#">Roles</a></li>
+                            <li><g:link controller="party" action="index">Participantes</g:link></li>
+                            <li><g:link controller="user" action="index">Usuarios</g:link></li>
+                            <li><g:link controller="role" action="index">Roles</g:link></li>
                         </ul>
                     </li>
                 </ul>
@@ -68,8 +66,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                             role="button" aria-haspopup="true" aria-expanded="false">Documentos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Emitir</a></li>
-                            <li><a href="#">Emitidos</a></li>
+                            <li><g:link controller="document" action="index">Documentos</g:link></li>
                         </ul>
                     </li>
                 </ul>
