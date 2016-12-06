@@ -23,13 +23,56 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#">
+                <a class="navbar-brand" href="/home">
                     <i class="fa grails-icon">
                         <asset:image src="grails-cupsonly-logo-white.svg"/>
                     </i>KUSTOMER
                 </a>
             </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
+            <div class="navbar-collapse collapse" aria-expanded="false" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Crear</a></li>
+                            <li><a href="#">Lista</a></li>
+                            <li><a href="#">Presupuesto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" aria-expanded="false">Participantes<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Crear</a></li>
+                            <li><a href="#">Lista</a></li>
+                            <li><a href="#">Usuarios</a></li>
+                            <li><a href="#">Roles</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" aria-expanded="false">Documentos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Emitir</a></li>
+                            <li><a href="#">Emitidos</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <g:pageProperty name="page.nav" />
                 </ul>
