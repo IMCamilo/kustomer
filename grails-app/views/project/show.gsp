@@ -9,7 +9,7 @@
         <a href="#show-project" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
@@ -19,7 +19,35 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="project" />
+            
+            <g:hiddenField name="version" value="${this.project?.version}" />
+                <br><br>
+                codigo proyecto ${this.project?.codeProject}
+                <br>pago por tarea completada ${this.project?.paidByCompleteTask}
+                <br>monto total ${this.project?.totalAmount}
+                <br>creado por ${this.project?.createdBy}
+                <br>Nombre ${this.project?.name}
+                <br>Descripcion ${this.project?.description}
+                <br>desde fecha ${this.project?.fromDate} 
+                <br>fecha creacion ${this.project?.creationDate}
+                <br>hasta fecha ${this.project?.thruDate}
+                
+                <br><br><br><br>
+                
+                <h2>cuadro con presupuestos del proyecto</h2>
+                <h2>==============================</h2>
+                <h2>==============================</h2>
+                <h2>Crear Presupuestos<h2>
+                
+                <br><br><br><br>
+                
+                <h2>cuadro con tareas del proyecto</h2>
+                <h2>==============================</h2>
+                <h2>==============================</h2>
+                <h2>Crear Tareas<h2>
+                
+                <br><br><br><br><br>
+
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
