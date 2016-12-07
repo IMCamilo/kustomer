@@ -13,7 +13,6 @@ class BootStrap {
         def camilo = new User('camilo@kustomer.cl','qwerty','18653290-2').save()
         def david = new User('david@kustomer.cl','qwerty','18611290-2').save()
         def cristian = new User('cristian@kustomer.cl','qwerty','13644290-2').save()
-        def cristian = new User('max@kustomer.cl','qwerty','16721196-8').save()
 
         UserRole.create camilo, rolAdmin
         UserRole.withSession {
