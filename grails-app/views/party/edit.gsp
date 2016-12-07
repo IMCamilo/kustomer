@@ -49,8 +49,6 @@
                 <input type="text" name="nationality" value="${this.party?.nationality}" required="" id="nationality" />
                 <br>Telefono
                 <input type="text" name="phone" value="${this.party?.phone}" required="" id="phone" />
-                <br>Creado por
-                <input type="text" name="createdBy" value="${this.party?.createdBy}" required="" id="createdBy" />
                 <br>Rut
                 <input type="text" name="partyId" value="${this.party?.partyId}" required="" id="partyId" />
                 <br>Representante

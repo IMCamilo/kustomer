@@ -13,7 +13,7 @@
                 <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
-        <div id="create-projectDetail" class="content scaffold-create" role="main">
+        <div id="create-projectDetail" class="content scaffold- te" role="main">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
@@ -26,9 +26,10 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-               
-                <br>Created By <input type="text" name="createdBy" value="" required="" id="createdBy" />
-                <br>Description <input type="text" name="description" value="" required="" id="description" />
+                
+                <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
+                <br>Descripcion de la asignacion
+                <br><input type="text" name="description" value="" required="" id="description" />
                 <br>Project DESPLEGABLE PROYECTO
                 <br>Party DESPLEGABLE PARTY
 

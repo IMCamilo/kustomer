@@ -35,8 +35,6 @@
                 <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
                 <br>monto total
                 <input type="number" name="totalAmount" value="${this.project?.totalAmount}" required="" id="totalAmount" />
-                <br>creado por
-                <input type="text" name="createdBy" value=${this.project?.createdBy}"" required="" id="createdBy" />
                 <br>Nombre
                 <input type="text" name="name" value="${this.project?.name}" required="" id="name" />
                 <br>Descripcion

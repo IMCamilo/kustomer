@@ -28,8 +28,6 @@
             </g:hasErrors>
             <g:form resource="${this.document}" method="PUT">
                 <g:hiddenField name="version" value="${this.document?.version}" />
-                <br>creado por
-                <input type="text" name="createdBy" value="${this.document?.createdBy}" required="" id="createdBy" />
                 <br>Number Document
                 <input type="number" name="numberDocument" value="${this.document?.number}" required="" id="numberDocument" />
                 <br>Project Detail (autocompletable de detalle de proyecto)

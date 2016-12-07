@@ -9,6 +9,8 @@ class ProjectDetailController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -22,7 +24,9 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def create() {
-        respond new ProjectDetail(params)
+        def principal = springSecurityService.principal
+        String username = principal.username
+        respond new ProjectDetail(params), model:[username: username]
     }
 
     @Transactional

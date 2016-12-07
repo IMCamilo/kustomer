@@ -9,18 +9,18 @@ class PartyController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
-        if (isLoggedIn()) {
-            println "====>"+getAuthenticatedUser()
-            println "====>"+getPrincipal()
-            println "=================================="
-            getPrincipal().each {
-                println it
-            }
-
-            println "=================================="
-         }
+        
+        //get the roles and authorities
+        /**def auth = springSecurityService.authentication
+        def authorities = auth.authorities // a Collection of GrantedAuthority
+        boolean authenticated = auth.authenticated
+        println "authorities = ${authorities[0]}"
+        println "authenticated = $authenticated"
+        */
         params.max = Math.min(max ?: 10, 100)
         respond Party.list(params), model:[partyCount: Party.count()]
     }
@@ -32,7 +32,9 @@ class PartyController {
 
     @Secured(['ROLE_ADMIN'])
     def create() {
-        respond new Party(params)
+        def principal = springSecurityService.principal
+        String username = principal.username
+        respond new Party(params), model:[username:username]
     }
 
     @Transactional

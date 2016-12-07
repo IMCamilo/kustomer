@@ -26,8 +26,7 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                <br>creado por
-                <input type="text" name="createdBy" value="" required="" id="createdBy" />
+                <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                 <br>Number Document
                 <input type="number" name="numberDocument" value="" required="" id="numberDocument" />
                 <br>Project Detail (autocompletable de detalle de proyecto)
