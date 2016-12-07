@@ -5,6 +5,11 @@
         <g:set var="entityName" value="${message(code: 'projectDetail.label', default: 'ProjectDetail')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
         <asset:stylesheet src="autocomplete.css"/>
+        <style>
+            .typeahead {
+                width:400px;
+            }
+        </style>
     </head>
     <body>
         <a href="#create-projectDetail" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -29,18 +34,28 @@
             <g:form action="save">
                 
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                <br>Descripcion de la asignacion
-                <br><input type="text" name="description" value="" required="" id="description" />
-                <br><br>Project DESPLEGABLE PROYECTO
-                <br><br>Party DESPLEGABLE PARTY
+                <br>
+                <div class="fieldcontain required" id="userInputDiv">
+                    <label for="description">Descripcion de la asignacion
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input id="description" class="typeahead" name="description" type="text" required="" placeholder="Descripción para la asignación">
+                </div>
 
-                <div style="width:600px" class="fieldcontain required" id="usuarioinputdiv">
+                <div class="fieldcontain required" id="userInputDiv">
                     <label for="partyId">Usuario
                         <span class="required-indicator">*</span>
                     </label>
                     <input id="partyId" class="typeahead" name="partyId" type="text" required="" placeholder="Busca un usuario">
                 </div>
 
+                <div class="fieldcontain required" id="projectInputDiv">
+                    <label for="projectId">Proyecto
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input id="projectId" class="typeahead" name="projectId" type="text" required="" placeholder="Busca un proyecto">
+                </div>
+                <br><br>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
@@ -73,13 +88,26 @@
                         '${it.firstName} ${it.lastName} - ${it.partyId}',
                     </g:each>
                 ];
-                $('#usuarioinputdiv .typeahead').typeahead({
+                var projectList = [
+                    <g:each in="${projectList}">
+                        '${it.name} - ${it.codeProject}',
+                    </g:each>
+                ];
+                $('#userInputDiv .typeahead').typeahead({
                     hint: true,
                     highlight: true,
                     minLength: 1
                 }, {
                     name: 'userList',
                     source: substringMatcher(userList)
+                });
+                $('#projectInputDiv .typeahead').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'projectList',
+                    source: substringMatcher(projectList)
                 });
             });
         </script>
