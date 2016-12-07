@@ -35,7 +35,7 @@
                 
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                 <br>
-                <div class="fieldcontain required" id="userInputDiv">
+                <div class="fieldcontain required" id="descriptionInputDiv">
                     <label for="description">Descripcion de la asignacion
                         <span class="required-indicator">*</span>
                     </label>
