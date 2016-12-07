@@ -85,12 +85,12 @@
                 };
                 var userList = [
                     <g:each in="${userList}">
-                        '${it.firstName} ${it.lastName} - ${it.partyId}',
+                        '${it.firstName} ${it.lastName} ● ${it.partyId}',
                     </g:each>
                 ];
                 var projectList = [
                     <g:each in="${projectList}">
-                        '${it.name} - ${it.codeProject}',
+                        '${it.name} ● ${it.codeProject}',
                     </g:each>
                 ];
                 $('#userInputDiv .typeahead').typeahead({
