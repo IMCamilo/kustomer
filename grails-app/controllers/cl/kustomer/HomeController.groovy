@@ -5,7 +5,7 @@ class HomeController {
 
     @Secured(['ROLE_ADMIN'])
     def index() {
-
+        
     }
 
 }
