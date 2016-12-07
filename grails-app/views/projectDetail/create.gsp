@@ -5,11 +5,7 @@
         <g:set var="entityName" value="${message(code: 'projectDetail.label', default: 'ProjectDetail')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
         <asset:stylesheet src="autocomplete.css"/>
-        <style>
-            .typeahead {
-                width:400px;
-            }
-        </style>
+        <asset:stylesheet src="kustomer.css"/>
     </head>
     <body>
         <a href="#create-projectDetail" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
