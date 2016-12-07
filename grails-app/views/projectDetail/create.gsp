@@ -4,6 +4,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectDetail.label', default: 'ProjectDetail')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="autocomplete.css"/>
     </head>
     <body>
         <a href="#create-projectDetail" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -30,13 +31,58 @@
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                 <br>Descripcion de la asignacion
                 <br><input type="text" name="description" value="" required="" id="description" />
-                <br>Project DESPLEGABLE PROYECTO
-                <br>Party DESPLEGABLE PARTY
+                <br><br>Project DESPLEGABLE PROYECTO
+                <br><br>Party DESPLEGABLE PARTY
+
+                <div style="width:600px" class="fieldcontain required" id="usuarioinputdiv">
+                    <label for="partyId">Usuario
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input id="partyId" class="typeahead" name="partyId" type="text" required="" placeholder="Busca un usuario">
+                </div>
 
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
             </g:form>
         </div>
+
+        <asset:javascript src="jquery-2.2.0.min.js"/>
+        <asset:javascript src="typeahead.bundle.js"/>
+        <script>
+            $(document).ready(function() {
+                var substringMatcher = function(strs) {
+                    return function findMatches(q, cb) {
+                        var matches, substringRegex;
+                        // an array that will be populated with substring matches
+                        matches = [];
+                        // regex used to determine if a string contains the substring `q`
+                        substrRegex = new RegExp(q, 'i');
+                        // iterate through the pool of strings and for any string that
+                        // contains the substring `q`, add it to the `matches` array
+                        $.each(strs, function(i, str) {
+                            if (substrRegex.test(str)) {
+                                matches.push(str);
+                            }
+                        });
+                        cb(matches);
+                    };
+                };
+                var userList = [
+                    <g:each in="${userList}">
+                        '${it.firstName} ${it.lastName} - ${it.partyId}',
+                    </g:each>
+                ];
+                $('#usuarioinputdiv .typeahead').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'userList',
+                    source: substringMatcher(userList)
+                });
+            });
+        </script>
+
     </body>
 </html>

@@ -24,9 +24,10 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def create() {
+        def userList = Party.list()
         def principal = springSecurityService.principal
         String username = principal.username
-        respond new ProjectDetail(params), model:[username: username]
+        respond new ProjectDetail(params), model:[username: username, userList:userList]
     }
 
     @Transactional
