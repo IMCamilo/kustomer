@@ -446,7 +446,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-    background: #79b94c;
+    background: #4298B8;
 }
 
 /* PAGINATION */
@@ -561,7 +561,7 @@ a.skip {
 }
 
 .grails-logo-container {
-    background:#79b94c no-repeat 50% 30%;
+    background:#4298B8 no-repeat 50% 30%;
     margin-bottom: 20px;
     color: white;
     height:300px;
