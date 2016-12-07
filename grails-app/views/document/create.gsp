@@ -29,8 +29,8 @@
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                 <table>
                   <tr>
-                <tr><br>Number Document</tr>
-                <tr>&nbsp;<input type="number" name="numberDocument" value="" required="" id="numberDocument" /></tr>
+                <td><br>Number Document</td>
+                <td>&nbsp;<input type="number" name="numberDocument" value="" required="" id="numberDocument" /></td>
               </tr>
                 </table>
                 <br>Project Detail (autocompletable de detalle de proyecto)
