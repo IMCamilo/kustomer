@@ -26,23 +26,37 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                <br>Genero
-                <select name="gender" required="" id="gender" >
+            <table>
+              <tr>
+                <tr><br>Genero</tr>
+                <tr>&nbsp;<select name="gender" required="" id="gender" >
                     <option value="No Aplica" >No Aplica</option>
                     <option value="Masculino" >Masculino</option>
                     <option value="Feminino" >Feminino</option>
-                </select>
-                <br>Apellido
-                <input type="text" name="lastName" value="" required="" id="lastName" />
-                <br>Direccion
-                <input type="text" name="address" value="" required="" id="address" />
-                <br>Correo
-                <input type="text" name="mail" value="" required="" id="mail" />
-                <br>Es empresa
-                <input type="hidden" name="_isCompany" />
-                <input type="checkbox" name="isCompany" id="isCompany"  />
-                <br>Nombre
+                    </select>
+                </tr>
+              </tr>
+              <tr>
+                <tr><br>Apellido</tr>
+                <tr>&nbsp;<input type="text" name="lastName" value="" required="" id="lastName" /></tr>
+              </tr>
+              <tr>
+                <tr><br>Direccion</tr>
+                <tr><input type="text" name="address" value="" required="" id="address" /></tr>
+              </tr>
+              <tr>
+                <tr><br>Correo</tr>
+                <tr><input type="text" name="mail" value="" required="" id="mail" /></tr>
+              </tr>
+                <tr>
+                <tr><br>Es empresa</tr>
+                <tr><input type="hidden" name="_isCompany" /></tr>
+                <tr><input type="checkbox" name="isCompany" id="isCompany"  /><tr>
+                </tr>
+                <tr>
+                <tr><br>Nombre</tr>
                 <input type="text" name="firstName" value="" required="" id="firstName" />
+                </tr>
                 <br>Nacionalidad
                 <input type="text" name="nationality" value="" required="" id="nationality" />
                 <br>Telefono
@@ -52,6 +66,8 @@
                 <input type="text" name="partyId" value="" required="" id="partyId" />
                 <br>Representante
                 <input type="text" name="representative" value="" required="" id="representative" />
+
+              </table>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

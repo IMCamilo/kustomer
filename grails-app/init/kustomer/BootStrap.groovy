@@ -26,7 +26,7 @@ class BootStrap {
             it.clear()
         }
 
-        UserRole.create cristian, rolUserStandar
+        UserRole.create cristian, rolAdmin
         UserRole.withSession {
             it.flush()
             it.clear()

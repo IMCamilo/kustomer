@@ -27,11 +27,16 @@
             </g:hasErrors>
             <g:form action="save">
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                <br>Number Document
-                <input type="number" name="numberDocument" value="" required="" id="numberDocument" />
+                <table>
+                  <tr>
+                <tr><br>Number Document</tr>
+                <tr>&nbsp;<input type="number" name="numberDocument" value="" required="" id="numberDocument" /></tr>
+              </tr>
+                </table>
                 <br>Project Detail (autocompletable de detalle de proyecto)
                 o en su defecto en el detalle de proyecto (como entidad)
                 un "generar docuemnto" para que genere un documento.
+
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
