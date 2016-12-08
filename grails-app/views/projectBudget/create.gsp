@@ -52,11 +52,11 @@
                     <input id="description" class="typeahead" name="description" type="text" required="" placeholder="Descripción para el presupuesto">
                 </div>
 
-                <div class="fieldcontain required espacio" id="assignInputDiv">
-                    <label for="projectDetailId">Asigna a un proyecto
+                <div class="fieldcontain required espacio" id="projectInputDiv">
+                    <label for="projectId">Asigna a un proyecto
                         <span class="required-indicator">*</span>
                     </label>
-                    <input id="projectDetailId" class="typeahead" name="projectDetailId" type="text" required="" placeholder="Asigna a un proyecto">
+                    <input id="projectId" class="typeahead" name="projectId" type="text" required="" placeholder="Asigna a un proyecto">
                 </div>
                 <br>
                 <fieldset class="buttons">
@@ -81,18 +81,18 @@
                         cb(matches);
                     };
                 };
-                var detailList = [
-                    <g:each in="${detailList}">
+                var projectList = [
+                    <g:each in="${projectList}">
                         '${it.codeProject} ${it.name} - ${it.id}',  
                     </g:each>
                 ];
-                $('#assignInputDiv .typeahead').typeahead({
+                $('#projectInputDiv .typeahead').typeahead({
                     hint: true,
                     highlight: true,
                     minLength: 1
                 }, {
-                    name: 'detailList',
-                    source: substringMatcher(detailList)
+                    name: 'projectList',
+                    source: substringMatcher(projectList)
                 });
             });
         </script>

@@ -12,7 +12,7 @@ class ProjectBudget {
     String createdBy
     Date creationDate = new Date()
 
-    static belongsTo = [projectDetail: ProjectDetail]
+    static belongsTo = [project: Project]
 
     static constraints = {
     }

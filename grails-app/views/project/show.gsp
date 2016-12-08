@@ -17,7 +17,8 @@
         <div id="show-project" class="content scaffold-show" role="main">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+                <div class="message" role="status">${flash.message}
+                </div>
             </g:if>
             
             <g:hiddenField name="version" value="${this.project?.version}" />
@@ -41,30 +42,25 @@
                 
                 <br><br><br><br>
                 <h2>Tareas del proyecto</h2>
-                <table id="tabla">
+                <table style="width:400px" id="tabla">
                     <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Descripción</th>
-                        <th>Creado por</th>
-                    </tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Descripción</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr class="fila-base">
                             <td><input type="text" name="name"/></td>
                             <td><input type="text" name="status"/></td>
                             <td><input type="text" name="description"/></td>
-                            <td><input type="text" name="createdBy" value="${username}"/></td>
                         </tr>
                     </tbody>
                 </table>
                 <!-- Botón para agregar filas -->
                 <input type="button" id="agregar" value="Agregar fila" />
-                <h2>Crear Tareas<h2>
-                
                 <br><br><br><br><br>
-
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

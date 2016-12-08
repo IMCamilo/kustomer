@@ -55,7 +55,7 @@
                     <label for="projectDetailId">Asigna a un proyecto
                         <span class="required-indicator">*</span>
                     </label>
-                    <input id="projectDetailId" value="${mapWithCurrentDetails.codeProject} ${mapWithCurrentDetails.name} - ${mapWithCurrentDetails.id}" class="typeahead" name="projectDetailId" type="text" required="" placeholder="Asigna a un proyecto">
+                    <input id="projectDetailId" value="${currentProject.codeProject} ${currentProject.name} - ${currentProject.id}" class="typeahead" name="projectDetailId" type="text" required="" placeholder="Asigna a un proyecto">
                 </div>
                 <br>
                 <fieldset class="buttons">
@@ -81,8 +81,8 @@
                         cb(matches);
                     };
                 };
-                var detailList = [
-                    <g:each in="${detailList}">
+                var projectList = [
+                    <g:each in="${projectList}">
                         '${it.codeProject} ${it.name} - ${it.id}',  
                     </g:each>
                 ];
@@ -91,8 +91,8 @@
                     highlight: true,
                     minLength: 1
                 }, {
-                    name: 'detailList',
-                    source: substringMatcher(detailList)
+                    name: 'projectList',
+                    source: substringMatcher(projectList)
                 });
             });
         </script>

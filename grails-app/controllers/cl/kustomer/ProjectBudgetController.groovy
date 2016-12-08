@@ -19,37 +19,41 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectBudget projectBudget) {
-        def currentDetailList = ProjectDetail.findById(projectBudget.projectDetailId)
-        def currentProjectDetail = Project.findById(currentDetailList.projectId)
-        def mapWithCurrentDetails = [
-            id:currentDetailList.id,
-            codeProject: currentProjectDetail.codeProject,
-            name: currentProjectDetail.name
-        ]
-        respond projectBudget, model:[mapWithCurrentDetails:mapWithCurrentDetails]
+        def currentProject = Project.findById(projectBudget.projectId)
+        respond projectBudget, model:[currentProject:currentProject]
     }
 
     @Secured(['ROLE_ADMIN'])
     def create() {
-        def projectDetailList = ProjectDetail.list()
-        def detailList = []
-        projectDetailList.each {
-            def projectDetailListMap = [:]
-            projectDetailListMap.id = it.id
-            def projectDetail = Project.findById(it.projectId)
-            projectDetailListMap.codeProject = projectDetail.codeProject
-            projectDetailListMap.name = projectDetail.name
-            detailList.add(projectDetailListMap)
-        }
+        def projectList = Project.list()
         def principal = springSecurityService.principal
         String username = principal.username
         respond new ProjectBudget(params), 
-            model:[username:username, detailList:detailList]
+            model:[username:username, projectList:projectList]
     }
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def save(ProjectBudget projectBudget) {
+    def save() {
+
+        def p = null
+
+        try {
+            String[] projectInForm = ((String) params.projectId).split(" - ");
+            p = Project.findById(projectInForm[1])
+        } catch (Exception e) {
+            println "Error vaclidando presupuesto ${e.getMessage()}"
+        }
+
+        if (!p) {
+            flash.message = "Debes seleccionar al menos un proyecto para este presupuesto"
+            redirect(controller: "projectBudget", action: "create")
+            return
+        }
+        params.project = p.id
+
+        def projectBudget = new ProjectBudget(params)
+
         if (projectBudget == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -75,29 +79,34 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def edit(ProjectBudget projectBudget) {
-        def currentDetailList = ProjectDetail.findById(projectBudget.projectDetailId)
-        def currentProjectDetail = Project.findById(currentDetailList.projectId)
-        def mapWithCurrentDetails = [
-            id:currentDetailList.id,
-            codeProject: currentProjectDetail.codeProject,
-            name: currentProjectDetail.name
-        ]
-        def projectDetailList = ProjectDetail.list()
+        def currentProject = Project.findById(projectBudget.projectId)
+        def projectList = Project.list()
         def detailList = []
-        projectDetailList.each {
-            def projectDetailListMap = [:]
-            projectDetailListMap.id = it.id
-            def projectDetail = Project.findById(it.projectId)
-            projectDetailListMap.codeProject = projectDetail.codeProject
-            projectDetailListMap.name = projectDetail.name
-            detailList.add(projectDetailListMap)
-        }
-        respond projectBudget, model:[detailList:detailList, mapWithCurrentDetails:mapWithCurrentDetails]
+        respond projectBudget, model:[projectList:projectList,
+            currentProject:currentProject]
     }
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
     def update(ProjectBudget projectBudget) {
+        def p = null
+
+        try {
+            String[] projectInForm = ((String) params.projectId).split(" - ");
+            p = Project.findById(projectInForm[1])
+        } catch (Exception e) {
+            println "Error vaclidando presupuesto ${e.getMessage()}"
+        }
+
+        if (!p) {
+            flash.message = "Debes seleccionar al menos un proyecto para este presupuesto"
+            redirect(controller: "projectBudget", action: "create")
+            return
+        }
+        params.project = p.id
+
+        def projectBudget = new ProjectBudget(params)
+
         if (projectBudget == null) {
             transactionStatus.setRollbackOnly()
             notFound()

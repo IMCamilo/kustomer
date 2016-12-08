@@ -30,6 +30,10 @@
             </label>
             <br>
             <label>
+                Monto del presupuesto : ${this.projectBudget?.totalAmount}
+            </label>
+            <br>
+            <label>
                 Descripción del presupuesto : ${this.projectBudget?.description}
             </label>
             <br>
@@ -38,7 +42,11 @@
             </label>
             <br>
             <label>
-                Asigna a un proyecto : ${mapWithCurrentDetails.codeProject} ${mapWithCurrentDetails.name} - ${mapWithCurrentDetails.id}
+               Nombre proyecto : ${this.currentProject?.name}
+            </label>
+            <br>
+            <label>
+               Código proyecto : ${this.currentProject?.codeProject}
             </label>
             <br>
 

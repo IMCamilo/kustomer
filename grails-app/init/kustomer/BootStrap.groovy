@@ -47,9 +47,9 @@ class BootStrap {
             party : 1, description : "Tarea Uno con detalle para primer proyecto",
             creationDate : new Date()).save()
 
-        //presupuesto asignado al detalle de proyecto (asignacion) 1.
+        //presupuesto de 10.000.000 asignado al detalle de proyecto (asignacion) 1.
         //hace referencia al proyecto uno con el participante 1.
-        new ProjectBudget(projectDetail : 1, createdBy : "david@kustomer.cl", 
+        new ProjectBudget(project : 1, createdBy : "david@kustomer.cl", totalAmount: 10000000,
             name : "Proyecto Celeste", description : "Tarea Uno con detalle para primer proyecto",
             creationDate : new Date()).save()
 

@@ -16,7 +16,8 @@ class Project {
     Date thruDate
     Date creationDate = new Date()
 
-    static hasMany = [projectDetail: ProjectDetail, projectTask: ProjectTask]
+    static hasMany = [projectBudget: ProjectBudget,
+        projectDetail: ProjectDetail, projectTask: ProjectTask]
 
     static constraints = {
         codeProject blank: false, unique: true
