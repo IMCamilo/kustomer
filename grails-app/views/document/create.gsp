@@ -3,20 +3,20 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'document.label', default: 'Document')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>Crear Documento</title>
         <asset:stylesheet src="autocomplete.css"/>
-        <asset:stylesheet src="kustomer.css"/>      
+        <asset:stylesheet src="kustomer.css"/>
     </head>
     <body>
         <a href="#create-document" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista Documento</g:link></li>
             </ul>
         </div>
         <div id="create-document" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1>Crear Documento</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -31,7 +31,7 @@
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
 
                 <div class="fieldcontain required" >
-                <label><br>Number Document
+                <label><br>Numero de documento
                 <span class="required-indicator">*</span></label>
                 <input type="number" name="numberDocument" value="" required="" id="numberDocument" />
                 </div>
