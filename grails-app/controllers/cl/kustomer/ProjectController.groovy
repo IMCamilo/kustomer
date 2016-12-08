@@ -19,7 +19,9 @@ class ProjectController {
 
     @Secured(['ROLE_ADMIN'])
     def show(Project project) {
-        respond project
+        def principal = springSecurityService.principal
+        String username = principal.username
+        respond project, model:[username:username]
     }
 
     @Secured(['ROLE_ADMIN'])

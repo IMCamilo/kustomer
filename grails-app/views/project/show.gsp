@@ -40,10 +40,27 @@
                 <h2>Crear Presupuestos<h2>
                 
                 <br><br><br><br>
-                
-                <h2>cuadro con tareas del proyecto</h2>
-                <h2>==============================</h2>
-                <h2>==============================</h2>
+                <h2>Tareas del proyecto</h2>
+                <table id="tabla">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Descripción</th>
+                        <th>Creado por</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fila-base">
+                            <td><input type="text" name="name"/></td>
+                            <td><input type="text" name="status"/></td>
+                            <td><input type="text" name="description"/></td>
+                            <td><input type="text" name="createdBy" value="${username}"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Botón para agregar filas -->
+                <input type="button" id="agregar" value="Agregar fila" />
                 <h2>Crear Tareas<h2>
                 
                 <br><br><br><br><br>
@@ -55,5 +72,14 @@
                 </fieldset>
             </g:form>
         </div>
+        <asset:javascript src="jquery-2.2.0.min.js"/>
+         <script type="text/javascript">
+            $(function(){
+                // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
+                $("#agregar").on('click', function(){
+                    $("#tabla tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tabla tbody");
+                });
+            });
+        </script>
     </body>
 </html>
