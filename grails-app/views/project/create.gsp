@@ -29,29 +29,35 @@
             </g:hasErrors>
             <g:form action="save">
             <div class="fieldcontain required">
-                <label><br>Codigo proyecto</label>
+                <label><br>Codigo proyecto
+                <span class="required-indicator">*</span></label>
                 <input type="text" name="codeProject" value="" required="" id="codeProject" />
             </div>
             <div class="fieldcontain required">
-                <label><br>Pago por tarea completada</label>
+                <label><br>Pago por tarea completada
+                <span class="required-indicator">*</span></label>
                 <input type="hidden" name="_paidByCompleteTask" />
                 <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
             </div>    
             <div class="fieldcontain required">
-                <label><br>Monto total</label>
+                <label><br>Monto total
+                <span class="required-indicator">*</span></label>
                 <input type="number" name="totalAmount" value="" required="" id="totalAmount" />
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
             </div>
             <div class="fieldcontain required">
-                <label><br>Nombre</label>
+                <label><br>Nombre
+                <span class="required-indicator">*</span></label>
                 <input type="text" name="name" value="" required="" id="name" />
             </div>
             <div class="fieldcontain required">
-                <label><br>Descripcion</label>
+                <label><br>Descripcion
+                <span class="required-indicator">*</span></label>
                 <input type="text" name="description" value="" required="" id="description" />
             </div>
             <div class="fieldcontain required">
-                <label><br>desde fecha</label> 
+                <label><br>desde fecha
+                <span class="required-indicator">*</span></label> 
                 <input type="hidden" name="fromDate" value="date.struct" />
                 <select name="fromDate_day" id="fromDate_day" aria-labelledby="fromDate">
                     <option value="1">1</option>
@@ -108,7 +114,8 @@
                 </select>
             </div>
             <div class="fieldcontain required">
-                <label><br>hasta fecha</label>
+                <label><br>hasta fecha
+                <span class="required-indicator">*</span></label>
                 <input type="hidden" name="thruDate" value="date.struct" />
                 <select name="thruDate_day" id="thruDate_day" aria-labelledby="thruDate">
                     <option value="1">1</option>
