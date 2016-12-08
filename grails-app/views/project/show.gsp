@@ -21,16 +21,16 @@
             </g:if>
             
             <g:hiddenField name="version" value="${this.project?.version}" />
-                <br><br>
-                codigo proyecto ${this.project?.codeProject}
-                <br>pago por tarea completada ${this.project?.paidByCompleteTask}
-                <br>monto total ${this.project?.totalAmount}
-                <br>creado por ${this.project?.createdBy}
-                <br>Nombre ${this.project?.name}
-                <br>Descripcion ${this.project?.description}
-                <br>desde fecha ${this.project?.fromDate} 
-                <br>fecha creacion ${this.project?.creationDate}
-                <br>hasta fecha ${this.project?.thruDate}
+                <br>
+                <br><label>Codigo proyecto : ${this.project?.codeProject}</label>
+                <br><label>Pago por tarea completada : ${this.project?.paidByCompleteTask}</label>
+                <br><label>Monto total : ${this.project?.totalAmount}</label>
+                <br><label>Creado por : ${this.project?.createdBy}</label>
+                <br><label>Nombre : ${this.project?.name}</label>
+                <br><label>Descripcion : ${this.project?.description}</label>
+                <br><label>Fecha creación : <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
+                <br><label>Desde fecha : <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
+                <br><label>Hasta fecha : <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
                 
                 <br><br><br><br>
                 
