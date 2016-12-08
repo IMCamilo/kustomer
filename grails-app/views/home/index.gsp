@@ -3,6 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <meta charset="UTF-8">
+        <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <title>Document</title>
     </head>
     <body>
