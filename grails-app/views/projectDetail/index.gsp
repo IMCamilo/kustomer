@@ -18,7 +18,25 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${projectDetailList}" />
+
+             <table>
+                <thead>
+                    <tr>
+                        <th>Ver</th>
+                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                        <g:sortableColumn property="creationDate" defaultOrder="desc" title="Fecha Creación"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each var="projectDetail" status="i" in="${projectDetailList}">
+                         <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
+                            <td><a href="show/${projectDetail.id}">Ver</a></td>
+                            <td>${projectDetail.description}</td>
+                            <td>${projectDetail.creationDate}</td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
 
             <div class="pagination">
                 <g:paginate total="${projectDetailCount ?: 0}" />
