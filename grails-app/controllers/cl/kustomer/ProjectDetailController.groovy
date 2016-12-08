@@ -82,7 +82,12 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def edit(ProjectDetail projectDetail) {
-        respond projectDetail
+        def partyFromAssign = Party.findById(projectDetail.partyId)
+        def projectFromAssign = Project.findById(projectDetail.projectId)
+        def userList = Party.list()
+        def projectList = Project.list()
+        respond projectDetail, model:
+            [userList:userList, projectList:projectList, projectFromAssign:projectFromAssign, partyFromAssign:partyFromAssign]
     }
 
     @Transactional
