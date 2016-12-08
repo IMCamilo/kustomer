@@ -33,7 +33,30 @@ class ProjectDetailController {
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def save(ProjectDetail projectDetail) {
+    def save() {
+
+        def u = null
+        def p = null
+
+        try {
+            String[] partyInForm = ((String) params.partyId).split(" - ");
+            String[] projectInForm = ((String) params.projectId).split(" - ");
+            u = Party.findById(partyInForm[1])
+            p = Project.findById(projectInForm[1])
+        } catch (Exception e) {
+            println "Error validando asignación ${e.getMessage()}"
+        }
+
+        if (!u || !p) {
+            flash.message = "Debes seleccionar al menos un usuario o un proyecto para esta asignación"
+            redirect(controller: "projectDetail", action: "create")
+            return
+        }
+        params.party = u.id
+        params.project = p.id
+
+        def projectDetail = new ProjectDetail(params)
+
         if (projectDetail == null) {
             transactionStatus.setRollbackOnly()
             notFound()
