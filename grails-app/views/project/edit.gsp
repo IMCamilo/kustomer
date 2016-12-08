@@ -31,8 +31,16 @@
                 codigo proyecto
                 <input type="text" name="codeProject" value="${this.project?.codeProject}" required="" id="codeProject" />
                 <br>pago por tarea completada
-                <input type="hidden" name="_paidByCompleteTask" />
-                <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
+
+                <g:if test="${this.project?.paidByCompleteTask == true}">
+                    <input type="hidden" name="_paidByCompleteTask"/>
+                    <input type="checkbox" name="paidByCompleteTask" checked id="paidByCompleteTask"  />
+                </g:if>
+                <g:else>
+                    <input type="hidden" name="_paidByCompleteTask"/>
+                    <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
+                </g:else>
+                
                 <br>monto total
                 <input type="number" name="totalAmount" value="${this.project?.totalAmount}" required="" id="totalAmount" />
                 <br>Nombre
