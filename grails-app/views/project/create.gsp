@@ -4,6 +4,12 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'project.label', default: 'Project')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="autocomplete.css"/>
+        <style>
+            .typeahead {
+                width:400px;
+            }
+        </style>
     </head>
     <body>
         <a href="#create-project" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -26,19 +32,30 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                codigo proyecto
+            <div class="fieldcontain required">
+                <label><br>Codigo proyecto</label>
                 <input type="text" name="codeProject" value="" required="" id="codeProject" />
-                <br>pago por tarea completada
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Pago por tarea completada</label>
                 <input type="hidden" name="_paidByCompleteTask" />
                 <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
-                <br>monto total
+            </div>    
+            <div class="fieldcontain required">
+                <label><br>Monto total</label>
                 <input type="number" name="totalAmount" value="" required="" id="totalAmount" />
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                <br>Nombre
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Nombre</label>
                 <input type="text" name="name" value="" required="" id="name" />
-                <br>Descripcion
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Descripcion</label>
                 <input type="text" name="description" value="" required="" id="description" />
-                 <br>desde fecha 
+            </div>
+            <div class="fieldcontain required">
+                <label><br>desde fecha</label> 
                 <input type="hidden" name="fromDate" value="date.struct" />
                 <select name="fromDate_day" id="fromDate_day" aria-labelledby="fromDate">
                     <option value="1">1</option>
@@ -93,7 +110,9 @@
                     <option value="2017">2017</option>
                     <option value="2016" selected="selected">2016</option>
                 </select>
-                <br>hasta fecha
+            </div>
+            <div class="fieldcontain required">
+                <label><br>hasta fecha</label>
                 <input type="hidden" name="thruDate" value="date.struct" />
                 <select name="thruDate_day" id="thruDate_day" aria-labelledby="thruDate">
                     <option value="1">1</option>
@@ -148,9 +167,8 @@
                     <option value="2017">2017</option>
                     <option value="2016" selected="selected">2016</option>
                 </select>
-                <br>
-                
-                <fieldset class="buttons">
+            </div>    
+                <br><fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.save.label', default: 'Save')}" />
                 </fieldset>
 

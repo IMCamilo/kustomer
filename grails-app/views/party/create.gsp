@@ -4,6 +4,12 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'party.label', default: 'Party')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="autocomplete.css"/>
+        <style>
+            .typeahead {
+                width:400px;
+            }
+        </style>
     </head>
     <body>
         <a href="#create-party" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -26,35 +32,53 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                <br>Genero
+            <div class="fieldcontain required">
+                <label><br>Genero</label>
                 <select name="gender" required="" id="gender" >
                     <option value="No Aplica" >No Aplica</option>
                     <option value="Masculino" >Masculino</option>
                     <option value="Feminino" >Feminino</option>
                     </select>
-                <br>Apellido
-                <input type="text" name="lastName" value="" required="" id="lastName" />
-
-                <br>Direccion
+            </div>
+            <div class="fieldcontain required">
+            <label><br>Apellido</label>
+            <input type="text" name="lastName" value="" required="" id="lastName" />
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Direccion</label>
                 <input type="text" name="address" value="" required="" id="address" />
-                <br>Correo
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Correo</label>
                 <input type="text" name="mail" value="" required="" id="mail" />
-                <br>Es empresa
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Es empresa</label>
                 <input type="hidden" name="_isCompany" />
                 <input type="checkbox" name="isCompany" id="isCompany"  />
-                <br>Nombre
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Nombre</label>
                 <input type="text" name="firstName" value="" required="" id="firstName" />
-                <br>Nacionalidad
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Nacionalidad</label>
                 <input type="text" name="nationality" value="" required="" id="nationality" />
-                <br>Telefono
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Telefono</label>
                 <input type="text" name="phone" value="" required="" id="phone" />
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                <br>Rut
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Rut</label>
                 <input type="text" name="partyId" value="" required="" id="partyId" />
-                <br>Representante
+            </div>
+            <div class="fieldcontain required">
+                <label><br>Representante</label>
                 <input type="text" name="representative" value="" required="" id="representative" />
-
-                <fieldset class="buttons">
+            </div>    
+                <br><fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
             </g:form>
