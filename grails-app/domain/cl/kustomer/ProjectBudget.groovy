@@ -8,6 +8,7 @@ class ProjectBudget {
 
     String name
     String description
+    Integer totalAmount
     String createdBy
     Date creationDate = new Date()
 

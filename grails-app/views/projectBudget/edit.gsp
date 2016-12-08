@@ -38,6 +38,13 @@
                 </div>
 
                 <div class="fieldcontain required espacio">
+                    <label for="totalAmount">Monto total
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <input id="totalAmount" value="${this.projectBudget?.totalAmount}" class="typeahead" name="totalAmount" type="number" required="" placeholder="Monto para el presupuesto">
+                </div>
+
+                <div class="fieldcontain required espacio">
                     <label for="description">Descripción del presupuesto
                         <span class="required-indicator">*</span>
                     </label>

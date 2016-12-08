@@ -19,7 +19,31 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${projectBudgetList}" />
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ver</th>
+                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
+                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                        <g:sortableColumn property="totalAmount" defaultOrder="desc" title="Monto Total"/>
+                        <g:sortableColumn property="creationDate" defaultOrder="desc" title="Fecha Creación"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each var="projectBudget" status="i" in="${projectBudgetList}">
+                         <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
+                            <td><a href="show/${projectBudget.id}">Ver</a></td>
+                            <td>${projectBudget.name}</td>
+                            <td>${projectBudget.description}</td>
+                            <td>${projectBudget.totalAmount}</td>
+                            <td>
+                                <g:formatDate date="${projectBudget.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
+                            </td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
 
             <div class="pagination">
                 <g:paginate total="${projectBudgetCount ?: 0}" />
