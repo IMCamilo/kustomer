@@ -24,7 +24,7 @@
                 <br><label>Descripción : ${this.projectDetail?.description}</label>
                 <br><label>Proyecto : ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label>
                 <br><label>Participante : ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label>
-            
+                <br><br>
             
             <g:form resource="${this.projectDetail}" method="DELETE">
                 <fieldset class="buttons">
