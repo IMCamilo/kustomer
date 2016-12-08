@@ -31,7 +31,8 @@
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
 
                 <div class="fieldcontain required" >
-                <label><br>Number Document</label>
+                <label><br>Number Document
+                <span class="required-indicator">*</span></label>
                 <input type="number" name="numberDocument" value="" required="" id="numberDocument" />
                 </div>
                 <br>Project Detail (autocompletable de detalle de proyecto)
