@@ -4,7 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'document.label', default: 'Document')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>Lista Documentos</title>
     </head>
     <body>
         <a href="#list-document" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -15,7 +15,7 @@
             </ul>
         </div>
         <div id="list-document" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1>Lista de Documentos</h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>

@@ -19,7 +19,7 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            
+
             <br>creado por ${this.document?.createdBy}
             <br>Number Document ${this.document?.number}
             <br>Project Detail (autocompletable de detalle de proyecto)

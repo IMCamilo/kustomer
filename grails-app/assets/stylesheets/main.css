@@ -577,3 +577,6 @@ img.grails-logo {
   width: 50%;
   margin-left: 350px;
 }
+.fieldcontain{
+    margin-top: -10px;
+}
