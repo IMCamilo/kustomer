@@ -9,6 +9,8 @@ class ProjectBudgetController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -22,7 +24,20 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def create() {
-        respond new ProjectBudget(params)
+        def projectDetailList = ProjectDetail.list()
+        def detailList = []
+        projectDetailList.each {
+            def projectDetailListMap = [:]
+            projectDetailListMap.id = it.id
+            def projectDetail = Project.findById(it.projectId)
+            projectDetailListMap.codeProject = projectDetail.codeProject
+            projectDetailListMap.name = projectDetail.name
+            detailList.add(projectDetailListMap)
+        }
+        def principal = springSecurityService.principal
+        String username = principal.username
+        respond new ProjectBudget(params), 
+            model:[username:username, detailList:detailList]
     }
 
     @Transactional
@@ -53,7 +68,24 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def edit(ProjectBudget projectBudget) {
-        respond projectBudget
+        def currentDetailList = ProjectDetail.findById(projectBudget.projectDetailId)
+        def currentProjectDetail = Project.findById(currentDetailList.projectId)
+        def mapWithCurrentDetails = [
+            id:currentDetailList.id,
+            codeProject: currentProjectDetail.codeProject,
+            name: currentProjectDetail.name
+        ]
+        def projectDetailList = ProjectDetail.list()
+        def detailList = []
+        projectDetailList.each {
+            def projectDetailListMap = [:]
+            projectDetailListMap.id = it.id
+            def projectDetail = Project.findById(it.projectId)
+            projectDetailListMap.codeProject = projectDetail.codeProject
+            projectDetailListMap.name = projectDetail.name
+            detailList.add(projectDetailListMap)
+        }
+        respond projectBudget, model:[detailList:detailList, mapWithCurrentDetails:mapWithCurrentDetails]
     }
 
     @Transactional
