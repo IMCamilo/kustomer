@@ -4,6 +4,12 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'document.label', default: 'Document')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <asset:stylesheet src="autocomplete.css"/>
+        <style>
+            .typeahead {
+                width:400px;
+            }
+        </style>
     </head>
     <body>
         <a href="#create-document" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -27,12 +33,11 @@
             </g:hasErrors>
             <g:form action="save">
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                <table>
-                  <tr>
-                <td><br>Number Document</td>
-                <td>&nbsp;<input type="number" name="numberDocument" value="" required="" id="numberDocument" /></td>
-              </tr>
-                </table>
+
+                <div class="fieldcontain required" >
+                <label><br>Number Document</label>
+                <input type="number" name="numberDocument" value="" required="" id="numberDocument" />
+                </div>
                 <br>Project Detail (autocompletable de detalle de proyecto)
                 o en su defecto en el detalle de proyecto (como entidad)
                 un "generar docuemnto" para que genere un documento.
