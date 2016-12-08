@@ -19,7 +19,10 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectDetail projectDetail) {
-        respond projectDetail
+        def partyFromAssign = Party.findById(projectDetail.partyId)
+        def projectFromAssign = Project.findById(projectDetail.projectId)
+        respond projectDetail, 
+            model:[partyFromAssign:partyFromAssign, projectFromAssign:projectFromAssign]
     }
 
     @Secured(['ROLE_ADMIN'])

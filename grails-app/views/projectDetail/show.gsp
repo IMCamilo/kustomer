@@ -19,10 +19,10 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <br>Created By ${this.projectDetail?.createdBy} 
-            <br>Description ${this.projectDetail?.description} 
-            <br>Project DESPLEGABLE PROYECTO ${this.projectDetail?.projectId}
-            <br>Party DESPLEGABLE PARTY ${this.projectDetail?.partyId}
+            <br>Creado por : ${this.projectDetail?.createdBy} 
+            <br>Descripción : ${this.projectDetail?.description} 
+            <br>Proyecto : ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}
+            <br>Participante : ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}
             <g:form resource="${this.projectDetail}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.projectDetail}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
