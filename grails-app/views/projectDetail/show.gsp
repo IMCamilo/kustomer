@@ -23,6 +23,7 @@
                 <br><label>Creado por : ${this.projectDetail?.createdBy}</label>
                 <br><label>Descripción : ${this.projectDetail?.description}</label>
                 <br><label>Proyecto : ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label>
+                <br><label>Fecha creación : <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
                 <br><label>Participante : ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label>
                 <br><br>
             

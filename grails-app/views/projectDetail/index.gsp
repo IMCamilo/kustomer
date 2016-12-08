@@ -33,7 +33,9 @@
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
                             <td><a href="show/${projectDetail.id}">Ver</a></td>
                             <td>${projectDetail.description}</td>
-                            <td>${projectDetail.creationDate}</td>
+                            <td>
+                                <g:formatDate date="${projectDetail.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
+                            </td>
                         </tr>
                     </g:each>
                 </tbody>
