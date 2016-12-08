@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>

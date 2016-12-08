@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <title>Welcome to Grails</title>
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+    <title>Kustomer</title>
+    <asset:link rel="icon" href="icono.png" type="image/x-ico" />
 </head>
 <body>
 

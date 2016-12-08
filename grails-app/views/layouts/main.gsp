@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
+<asset:link rel="icon" href="icono.png" type="image/x-ico" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
@@ -25,7 +26,7 @@
                 </button>
                 <a class="navbar-brand" href="/home">
                     <i class="fa grails-icon">
-                        <asset:image src="logo.png"/>
+                        <asset:image src="iconkustomer.png"/>
                     </i>KUSTOMER
                 </a>
             </div>
