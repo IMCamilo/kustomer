@@ -28,24 +28,24 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-                
+
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                 <br>
-                <div class="fieldcontain required" id="descriptionInputDiv">
+                <div class="fieldcontain required espacio" id="descriptionInputDiv">
                     <label for="description">Descripcion de la asignacion
                         <span class="required-indicator">*</span>
                     </label>
                     <input id="description" class="typeahead" name="description" type="text" required="" placeholder="Descripción para la asignación">
                 </div>
 
-                <div class="fieldcontain required" id="userInputDiv">
+                <div class="fieldcontain required espacio" id="userInputDiv">
                     <label for="partyId">Usuario
                         <span class="required-indicator">*</span>
                     </label>
                     <input id="partyId" class="typeahead" name="partyId" type="text" required="" placeholder="Busca un usuario">
                 </div>
 
-                <div class="fieldcontain required" id="projectInputDiv">
+                <div class="fieldcontain required espacio" id="projectInputDiv">
                     <label for="projectId">Proyecto
                         <span class="required-indicator">*</span>
                     </label>

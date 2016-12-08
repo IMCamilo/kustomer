@@ -4,3 +4,9 @@
 .typeahead {
     width:400px;
 }
+.fieldcontain{
+    margin-top: -10px;
+}
+.espacio{
+    margin-top: 10px;
+}
