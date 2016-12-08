@@ -19,7 +19,14 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectBudget projectBudget) {
-        respond projectBudget
+        def currentDetailList = ProjectDetail.findById(projectBudget.projectDetailId)
+        def currentProjectDetail = Project.findById(currentDetailList.projectId)
+        def mapWithCurrentDetails = [
+            id:currentDetailList.id,
+            codeProject: currentProjectDetail.codeProject,
+            name: currentProjectDetail.name
+        ]
+        respond projectBudget, model:[mapWithCurrentDetails:mapWithCurrentDetails]
     }
 
     @Secured(['ROLE_ADMIN'])

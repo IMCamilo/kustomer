@@ -19,7 +19,29 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="projectBudget" />
+            
+            <br>
+            <label>
+               Creado por : ${this.projectBudget?.createdBy}
+            </label>
+            <br>
+            <label>
+                Nombre del presupuesto : ${this.projectBudget?.name}
+            </label>
+            <br>
+            <label>
+                Descripción del presupuesto : ${this.projectBudget?.description}
+            </label>
+            <br>
+            <label>
+                Fecha creación : <g:formatDate date="${this.projectBudget?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
+            </label>
+            <br>
+            <label>
+                Asigna a un proyecto : ${mapWithCurrentDetails.codeProject} ${mapWithCurrentDetails.name} - ${mapWithCurrentDetails.id}
+            </label>
+            <br>
+
             <g:form resource="${this.projectBudget}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.projectBudget}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
