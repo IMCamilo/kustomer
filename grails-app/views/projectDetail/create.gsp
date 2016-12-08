@@ -65,12 +65,8 @@
                 var substringMatcher = function(strs) {
                     return function findMatches(q, cb) {
                         var matches, substringRegex;
-                        // an array that will be populated with substring matches
                         matches = [];
-                        // regex used to determine if a string contains the substring `q`
                         substrRegex = new RegExp(q, 'i');
-                        // iterate through the pool of strings and for any string that
-                        // contains the substring `q`, add it to the `matches` array
                         $.each(strs, function(i, str) {
                             if (substrRegex.test(str)) {
                                 matches.push(str);
@@ -81,12 +77,12 @@
                 };
                 var userList = [
                     <g:each in="${userList}">
-                        '${it.firstName} ${it.lastName} ● ${it.partyId}',
+                        '${it.partyId} - ${it.firstName} ${it.lastName} ● ${it.id}',
                     </g:each>
                 ];
                 var projectList = [
                     <g:each in="${projectList}">
-                        '${it.name} ● ${it.codeProject}',
+                        '${it.codeProject} - ${it.name} ● ${it.id}',
                     </g:each>
                 ];
                 $('#userInputDiv .typeahead').typeahead({
