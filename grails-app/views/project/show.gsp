@@ -24,7 +24,10 @@
             <g:hiddenField name="version" value="${this.project?.version}" />
             <br>
             <br><label>Codigo proyecto : ${this.project?.codeProject}</label>
-            <br><label>Pago por tarea completada : ${this.project?.paidByCompleteTask}</label>
+            <br><label>
+                <g:if test="${this.project?.paidByCompleteTask == true}">Pago por tarea completada : Si</g:if>
+                <g:else>Pago por tarea completada : No</g:else>
+            </label>
             <br><label>Monto total : ${this.project?.totalAmount}</label>
             <br><label>Creado por : ${this.project?.createdBy}</label>
             <br><label>Nombre : ${this.project?.name}</label>

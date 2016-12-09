@@ -26,6 +26,7 @@
                         <th>Ver</th>
                         <g:sortableColumn property="codeProject" defaultOrder="desc" title="Codigo"/>
                         <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
+                        <g:sortableColumn property="paidByCompleteTask" defaultOrder="desc" title="Pago por Tarea"/>
                         <g:sortableColumn property="totalAmount" defaultOrder="desc" title="Monto Total"/>
                     </tr>
                 </thead>
@@ -33,9 +34,13 @@
                     <g:each var="project" status="i" in="${projectList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
                             <td><a href="show/${project.id}">Ver</a></td>
-                            <td>${project.codeProject}</td>
-                            <td>${project.name}</td>
-                            <td>${project.totalAmount}</td>
+                            <td>${project?.codeProject}</td>
+                            <td>${project?.name}</td>
+                            <td>
+                                <g:if test="${this.project?.paidByCompleteTask == true}">Si</g:if>
+                                <g:else>No</g:else>
+                            </td>
+                            <td>${project?.totalAmount}</td>
                         </tr>
                     </g:each>
                 </tbody>
