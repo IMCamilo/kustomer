@@ -8,6 +8,7 @@ package cl.kustomer
 class Document {
 
     String createdBy
+    String projectId
     Date creationDate = new Date()
 
     static belongsTo = [projectDetail: ProjectDetail]

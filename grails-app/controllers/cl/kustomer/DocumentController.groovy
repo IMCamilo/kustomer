@@ -34,8 +34,8 @@ class DocumentController {
     def save() {
 
         def document = new Document(params)
-        contact.save flush: true, failOnError: true
-        redirect controller: "projectDetail", action: "show", id: contact.id
+        document.save flush: true, failOnError: true
+        redirect controller: "projectDetail", action: "show", id: document.projectId
 
         if (document == null) {
             transactionStatus.setRollbackOnly()

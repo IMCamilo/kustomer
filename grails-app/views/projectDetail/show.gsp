@@ -34,6 +34,7 @@
                     <g:form controller="document" action="save">
                         <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
                         <input type="hidden" name="projectDetail" value="${this.projectDetail?.id}" required="" id="projectDetail" />
+                        <input type="hidden" name="projectId" value="${this.projectDetail?.projectId}" required="" id="projectId" />
                         <input style="width:50%" class="btn btn-info" type="submit"
                             data-toggle="modal" value="Emitir Documento">
                         <br><br>
