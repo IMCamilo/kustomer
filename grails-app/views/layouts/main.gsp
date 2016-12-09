@@ -37,7 +37,7 @@
                             role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Salir</a></li>
+                            <li><a href="/logoff">Salir</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,7 +76,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                             role="button" aria-haspopup="true" aria-expanded="false">Documentos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><g:link controller="document" action="index">Documentos</g:link></li>
+                            <li><g:link controller="document" action="index">Emitidos</g:link></li>
                         </ul>
                     </li>
                 </ul>
