@@ -29,7 +29,6 @@
             <g:form resource="${this.document}" method="PUT">
                 <g:hiddenField name="version" value="${this.document?.version}" />
                 <br>Number Document
-                <input type="number" name="numberDocument" value="${this.document?.number}" required="" id="numberDocument" />
                 <br>Project Detail (autocompletable de detalle de proyecto)
                 o en su defecto en el detalle de proyecto (como entidad)
                 un "generar docuemnto" para que genere un documento.

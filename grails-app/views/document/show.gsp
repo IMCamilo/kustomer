@@ -21,7 +21,6 @@
             </g:if>
 
             <br>creado por ${this.document?.createdBy}
-            <br>Number Document ${this.document?.number}
             <br>Project Detail (autocompletable de detalle de proyecto)
             o en su defecto en el detalle de proyecto (como entidad)
             un "generar docuemnto" para que genere un documento.

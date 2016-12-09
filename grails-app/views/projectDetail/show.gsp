@@ -31,9 +31,16 @@
                 </div>
                 <div class="col-md-6">
                     <br>
-                    <input style="width:50%" class="btn btn-info" type="submit"
-                    data-toggle="modal" value="Emitir Documento">
-                    <br><br>
+                    <g:form controller="document" action="save">
+                        <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
+                        <input type="hidden" name="projectDetail" value="${this.projectDetail?.id}" required="" id="projectDetail" />
+                        <input style="width:50%" class="btn btn-info" type="submit"
+                            data-toggle="modal" value="Emitir Documento">
+                        <br><br>
+                    </g:form>
+
+
+                    
                     <input style="width:50%" class="btn btn-info" type="submit"
                     data-toggle="modal" value="Descargar Documento">
                     <br><br>

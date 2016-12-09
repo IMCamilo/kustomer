@@ -19,10 +19,13 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectDetail projectDetail) {
+        def principal = springSecurityService.principal
+        String username = principal.username
         def partyFromAssign = Party.findById(projectDetail.partyId)
         def projectFromAssign = Project.findById(projectDetail.projectId)
         respond projectDetail, 
-            model:[partyFromAssign:partyFromAssign, projectFromAssign:projectFromAssign]
+            model:[partyFromAssign:partyFromAssign, projectFromAssign:projectFromAssign,
+                username:username]
     }
 
     @Secured(['ROLE_ADMIN'])

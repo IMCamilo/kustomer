@@ -31,7 +31,12 @@ class DocumentController {
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def save(Document document) {
+    def save() {
+
+        def document = new Document(params)
+        contact.save flush: true, failOnError: true
+        redirect controller: "projectDetail", action: "show", id: contact.id
+
         if (document == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -44,15 +49,6 @@ class DocumentController {
             return
         }
 
-        document.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'document.label', default: 'Document'), document.id])
-                redirect document
-            }
-            '*' { respond document, [status: CREATED] }
-        }
     }
 
     @Secured(['ROLE_ADMIN'])
