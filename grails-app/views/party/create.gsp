@@ -54,7 +54,7 @@
             </div>
             <div class="fieldcontain required">
                 <label><br>Es empresa
-                <span class="required-indicator">*</span></label>
+                </label>
                 <input type="hidden" name="_isCompany" />
                 <input type="checkbox" name="isCompany" id="isCompany"  />
             </div>
