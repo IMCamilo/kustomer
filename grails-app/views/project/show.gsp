@@ -22,45 +22,58 @@
             </g:if>
             
             <g:hiddenField name="version" value="${this.project?.version}" />
-                <br>
-                <br><label>Codigo proyecto : ${this.project?.codeProject}</label>
-                <br><label>Pago por tarea completada : ${this.project?.paidByCompleteTask}</label>
-                <br><label>Monto total : ${this.project?.totalAmount}</label>
-                <br><label>Creado por : ${this.project?.createdBy}</label>
-                <br><label>Nombre : ${this.project?.name}</label>
-                <br><label>Descripcion : ${this.project?.description}</label>
-                <br><label>Fecha creación : <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-                <br><label>Desde fecha : <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-                <br><label>Hasta fecha : <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-                
-                <br><br><br><br>
-                
-                <h2>cuadro con presupuestos del proyecto</h2>
-                <h2>==============================</h2>
-                <h2>==============================</h2>
-                <h2>Crear Presupuestos<h2>
-                
-                <br><br><br><br>
-                <h2>Tareas del proyecto</h2>
-                <table style="width:400px" id="tabla">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Estado</th>
-                            <th>Descripción</th>
+            <br>
+            <br><label>Codigo proyecto : ${this.project?.codeProject}</label>
+            <br><label>Pago por tarea completada : ${this.project?.paidByCompleteTask}</label>
+            <br><label>Monto total : ${this.project?.totalAmount}</label>
+            <br><label>Creado por : ${this.project?.createdBy}</label>
+            <br><label>Nombre : ${this.project?.name}</label>
+            <br><label>Descripcion : ${this.project?.description}</label>
+            <br><label>Fecha creación : <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
+            <br><label>Desde fecha : <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
+            <br><label>Hasta fecha : <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
+            
+            <br><br><br><br>
+            
+            <h2>Tareas</h2>
+            <table style="width:70%" id="tabla">
+                <thead>
+                    <tr>
+                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
+                        <g:sortableColumn property="status" defaultOrder="desc" title="Estado"/>
+                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each var="tasks" status="i" in="${taskList}">
+                        <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
+                            <td>${tasks.name}</td>
+                            <td>${tasks.status}</td>
+                            <td>${tasks.description}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="fila-base">
-                            <td><input type="text" name="name"/></td>
-                            <td><input type="text" name="status"/></td>
-                            <td><input type="text" name="description"/></td>
+                    </g:each>
+                </tbody>
+            </table>
+            <h2>Presupuestos</h2>
+            <table style="width:70%" id="tabla">
+                <thead>
+                    <tr>
+                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
+                        <g:sortableColumn property="totalAmount" defaultOrder="desc" title="Monto"/>
+                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each var="budgets" status="i" in="${budgetList}">
+                        <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
+                            <td>${budgets.name}</td>
+                            <td>${budgets.totalAmount}</td>
+                            <td>${budgets.description}</td>
                         </tr>
-                    </tbody>
-                </table>
-                <!-- Botón para agregar filas -->
-                <input type="button" id="agregar" value="Agregar fila" />
-                <br><br><br><br><br>
+                    </g:each>
+                </tbody>
+            </table>
+            
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
@@ -68,6 +81,7 @@
                 </fieldset>
             </g:form>
         </div>
+
         <asset:javascript src="jquery-2.2.0.min.js"/>
          <script type="text/javascript">
             $(function(){
