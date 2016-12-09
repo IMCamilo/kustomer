@@ -7,7 +7,6 @@ package cl.kustomer
  */
 class Document {
 
-    Integer numberDocument
     String createdBy
     Date creationDate = new Date()
 

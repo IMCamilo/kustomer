@@ -36,7 +36,7 @@
             <br><br>
 
             <h2>Tareas</h2>
-            <table style="width:70%" id="tabla">
+            <table style="width:70%" id="tabla1">
                 <thead>
                     <tr>
                         <td>Nombre</td>
