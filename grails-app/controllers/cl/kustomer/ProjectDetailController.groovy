@@ -19,6 +19,49 @@ class ProjectDetailController {
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectDetail projectDetail) {
+        //project
+        def currentProject = Project.findById(projectDetail.projectId)
+        //tasks
+        def listTaskForProject = ProjectTask.findAll("from ProjectTask where project=" + projectDetail.projectId)
+        //parties
+        def listPartiesForProject = ProjectDetail.findAll("from ProjectDetail where project=" + projectDetail.projectId)
+        
+println """
+===================== detalle proyecto =====================
+CODE_PROJECT => $currentProject.codeProject
+NAME => $currentProject.name
+TOTAL_AMOUNT => $currentProject.totalAmount
+CREATION_DATE => $currentProject.creationDate
+DESCRIPTION => $currentProject.description
+PAID_BY_COMPLETE_TASK => $currentProject.paidByCompleteTask
+FROM_DATE => $currentProject.fromDate
+THRU_DATE => $currentProject.thruDate
+CREATED_BY => $currentProject.createdBy
+===================== detalle tareas =====================
+"""
+        listTaskForProject.each {
+println """
+CREATED_BY => $it.createdBy
+CREATION_DATE => $it.creationDate
+DESCRIPTION => $it.description
+NAME => $it.name
+PROJECT_ID => $it.projectId
+STATUS => $it.status
+"""
+        }
+        println "===================== participantes ====================="
+        listPartiesForProject.each {
+            def detailPartyInProject = Party.findById(it.partyId)
+println """
+PARTY_ID => $detailPartyInProject.partyId
+FIRST_NAME => $detailPartyInProject.firstName
+LAST_NAME => $detailPartyInProject.lastName
+ADDRESS => $detailPartyInProject.address
+MAIL => $detailPartyInProject.mail
+"""
+        }
+        
+        //  	  	  	  
         def principal = springSecurityService.principal
         String username = principal.username
         def partyFromAssign = Party.findById(projectDetail.partyId)
