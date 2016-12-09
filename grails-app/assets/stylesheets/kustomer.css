@@ -10,3 +10,13 @@
 .espacio{
     margin-top: 10px;
 }
+.mostrardiv{
+  display: inline;
+}
+.mostrarparty{
+  text-align: center;
+  border-top: 0px;
+}
+.tdizq{
+  float: right;
+}

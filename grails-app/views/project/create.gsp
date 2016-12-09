@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'project.label', default: 'Project')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>Crear Proyecto</title>
         <asset:stylesheet src="autocomplete.css"/>
         <asset:stylesheet src="kustomer.css"/>
     </head>
@@ -12,11 +12,11 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista de Proyectos</g:link></li>
             </ul>
         </div>
         <div id="create-project" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1>Crear Proyecto</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -38,7 +38,7 @@
                 <span class="required-indicator">*</span></label>
                 <input type="hidden" name="_paidByCompleteTask" />
                 <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
-            </div>    
+            </div>
             <div class="fieldcontain required">
                 <label><br>Monto total
                 <span class="required-indicator">*</span></label>
@@ -57,7 +57,7 @@
             </div>
             <div class="fieldcontain required">
                 <label><br>desde fecha
-                <span class="required-indicator">*</span></label> 
+                <span class="required-indicator">*</span></label>
                 <input type="hidden" name="fromDate" value="date.struct" />
                 <select name="fromDate_day" id="fromDate_day" aria-labelledby="fromDate">
                     <option value="1">1</option>
@@ -170,7 +170,7 @@
                     <option value="2017">2017</option>
                     <option value="2016" selected="selected">2016</option>
                 </select>
-            </div>    
+            </div>
                 <br><fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.save.label', default: 'Save')}" />
                 </fieldset>

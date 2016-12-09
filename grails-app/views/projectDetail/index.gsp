@@ -4,7 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectDetail.label', default: 'ProjectDetail')}" />
-        <title>Lista Detalle Proyectos</title>
+        <title>Asignaciones</title>
     </head>
     <body>
         <a href="#list-projectDetail" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
