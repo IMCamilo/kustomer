@@ -88,7 +88,7 @@ class ProjectBudgetController {
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def update(ProjectBudget projectBudget) {
+    def update() {
         def p = null
 
         try {
