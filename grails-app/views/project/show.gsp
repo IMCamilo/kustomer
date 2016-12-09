@@ -33,15 +33,16 @@
             <br><label>Desde fecha : <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
             <br><label>Hasta fecha : <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
             
-            <br><br><br><br>
-            
+            <br><br>
+
             <h2>Tareas</h2>
             <table style="width:70%" id="tabla">
                 <thead>
                     <tr>
-                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
-                        <g:sortableColumn property="status" defaultOrder="desc" title="Estado"/>
-                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                        <td>Nombre</td>
+                        <td>Estado</td>
+                        <td>Descripción</td>
+                        <td>Acción</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,17 +51,20 @@
                             <td>${tasks.name}</td>
                             <td>${tasks.status}</td>
                             <td>${tasks.description}</td>
+                            <td>Aprobar</td>
                         </tr>
                     </g:each>
                 </tbody>
             </table>
+            <input style="width:70%" class="btn btn-link" type="submit" value="Nueva tarea">
+
             <h2>Presupuestos</h2>
             <table style="width:70%" id="tabla">
                 <thead>
                     <tr>
-                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
-                        <g:sortableColumn property="totalAmount" defaultOrder="desc" title="Monto"/>
-                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
+                        <td>Nombre</td>
+                        <td>Monto</td>
+                        <td>Descripción</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,6 +77,8 @@
                     </g:each>
                 </tbody>
             </table>
+            <input style="width:70%" class="btn btn-link" type="submit" value="Nuevo presupuesto">
+            <br><br>
             
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
@@ -81,15 +87,5 @@
                 </fieldset>
             </g:form>
         </div>
-
-        <asset:javascript src="jquery-2.2.0.min.js"/>
-         <script type="text/javascript">
-            $(function(){
-                // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
-                $("#agregar").on('click', function(){
-                    $("#tabla tbody tr:eq(0)").clone().removeClass('fila-base').appendTo("#tabla tbody");
-                });
-            });
-        </script>
     </body>
 </html>
