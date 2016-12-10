@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Document</title>
+        <title>Home</title>
     </head>
     <body><br>
         <center><strong><h1 class="titulo1">BIENVENIDOS A KUSTOMER CRM</h1></strong></center>
