@@ -13,6 +13,9 @@
   </ul>
   <ul>
       <li><a title="Opcion 1" href="#">Inicio</a></li>
+      <li><a title="Opcion 2" href="#">Historia</a></li>
+      <li><a title="Opcion 3" href="#">Administrador</a></li>
+      <li><a title="Opcion 4" href="#">Mis Proyectos</a></li>
       <li><a title="Opcion 5" href="auth.gsp">Login</a></li>
   </ul>
 </nav>
