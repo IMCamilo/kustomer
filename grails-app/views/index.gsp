@@ -3,27 +3,28 @@
 <head>
     <title>Kustomer</title>
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
+    <asset:stylesheet src="kustomer.css"/>
 </head>
-<body>
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-        </div>
-    </div>
+<body class="bodyindex">
+<center>
+<nav>
+  <ul class="bienvenido">
+    <li><label class="letra">BIENVENIDO</label></li>
+  </ul>
+  <ul>
+      <li><a title="Opcion 1" href="#">Inicio</a></li>
+      <li><a title="Opcion 2" href="#">Historia</a></li>
+      <li><a title="Opcion 3" href="#">Administrador</a></li>
+      <li><a title="Opcion 4" href="#">Mis Proyectos</a></li>
+      <li><a title="Opcion 5" href="auth.gsp">Login</a></li>
+  </ul>
+</nav>
+</center>
+<div class="tamaño2">
+<center><label><asset:image src="iconkustomer.png" class="tamaño"/></label></center>
+</div>
 
-    <div id="content" role="main">
-        <section class="row colset-2-its">
-            <div id="controllers" role="navigation">
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
-        </section>
-    </div>
 
 </body>
+<div class="footer" role="contentinfo">@KUSTOMER CRM - CONSTRUCTORA JOPIA SPA. 2016</div>
 </html>
