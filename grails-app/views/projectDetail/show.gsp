@@ -43,6 +43,9 @@
                             <br><br>
                         </g:form>
                     </g:if>
+                     <g:else>
+                        <label>Emitido</label><br><br><br>
+                    </g:else>
                     
                     <g:form controller="document" name="downloadDocument" action="downloadDocument">
                         <input type="hidden" name="rendicion" value="${this.projectDetail?.projectId}">
