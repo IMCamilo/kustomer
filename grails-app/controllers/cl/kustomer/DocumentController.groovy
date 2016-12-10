@@ -19,7 +19,26 @@ class DocumentController {
 
     @Secured(['ROLE_ADMIN'])
     def show(Document document) {
-        respond document
+        def currentProject = Project.findById(document.projectId)
+        //tasks
+        def listTaskForProject = ProjectTask.findAll("from ProjectTask where project=" + document.projectId)
+        //parties
+        def partiesInProject = ProjectDetail.findAll("from ProjectDetail where project=" + document.projectId)
+       
+       def listPartiesForProject = []
+        partiesInProject.each {
+            def detailParty = Party.findById(it.partyId)
+            def currentParty = [:]
+            currentParty.partyId = detailParty.partyId
+            currentParty.firstName = detailParty.firstName
+            currentParty.lastName = detailParty.lastName
+            currentParty.mail = detailParty.mail
+            currentParty.address = detailParty.address
+            listPartiesForProject.add(currentParty)
+        }
+
+        respond document, model:[currentProject:currentProject, listTaskForProject:listTaskForProject,
+            listPartiesForProject:listPartiesForProject]
     }
         
     @Secured(['ROLE_ADMIN'])

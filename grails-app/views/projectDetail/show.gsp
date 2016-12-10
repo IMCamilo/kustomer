@@ -39,9 +39,6 @@
                             data-toggle="modal" value="Emitir Documento">
                         <br><br>
                     </g:form>
-
-
-                    
                     <input style="width:50%" class="btn btn-info" type="submit"
                     data-toggle="modal" value="Descargar Documento">
                     <br><br>
