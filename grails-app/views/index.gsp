@@ -5,7 +5,6 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
 </head>
 <body>
-
     <div class="svg" role="presentation">
         <div class="grails-logo-container">
             <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
