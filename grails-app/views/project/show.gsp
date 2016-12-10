@@ -24,17 +24,17 @@
 
             <g:hiddenField name="version" value="${this.project?.version}" />
             <table class="mostrarparty">
-              <tr><td class="tdizq"><strong><label>Codigo proyecto </strong></td><td> ${this.project?.codeProject}</label></td></tr>
-              <tr><td class="tdizq"><strong><label>
+                <tr><td class="tdizq"><strong><label>Codigo proyecto </strong></td><td> ${this.project?.codeProject}</label></td></tr>
+                <tr><td class="tdizq"><strong><label>
                 <g:if test="${this.project?.paidByCompleteTask == true}">Pago por tarea completada </strong> <td> Si</td></g:if>
                 <g:else>Pago por tarea completada  <td>No</td>  </g:else> </label></td></tr>
-              <tr><td class="tdizq"><strong><label>Monto total  </strong></td><td>${this.project?.totalAmount}</label></td></tr>
-              <tr><td class="tdizq"><strong><label>Creado por  </strong></td><td>${this.project?.createdBy}</label></td></tr>
-              <tr><td class="tdizq"><strong><label>Nombre </strong></td><td> ${this.project?.name}</label></td></tr>
-              <tr><td class="tdizq"><strong><label>Descripcion </strong></td><td> ${this.project?.description}</label></td></tr>
-              <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
-              <tr><td class="tdizq"><strong><label>Desde fecha </strong></td><td> <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
-              <tr><td class="tdizq"><strong><label>Hasta fecha </strong></td><td> <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+                <tr><td class="tdizq"><strong><label>Monto total  </strong></td><td>${this.project?.totalAmount}</label></td></tr>
+                <tr><td class="tdizq"><strong><label>Creado por  </strong></td><td>${this.project?.createdBy}</label></td></tr>
+                <tr><td class="tdizq"><strong><label>Nombre </strong></td><td> ${this.project?.name}</label></td></tr>
+                <tr><td class="tdizq"><strong><label>Descripcion </strong></td><td> ${this.project?.description}</label></td></tr>
+                <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+                <tr><td class="tdizq"><strong><label>Desde fecha </strong></td><td> <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+                <tr><td class="tdizq"><strong><label>Hasta fecha </strong></td><td> <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
             </table>
 
             <h2 class="titulotareas">Tareas</h2>

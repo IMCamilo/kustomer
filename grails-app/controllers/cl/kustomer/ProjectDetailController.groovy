@@ -40,7 +40,7 @@ class ProjectDetailController {
         
         respond projectDetail, 
             model:[partyFromAssign:partyFromAssign, projectFromAssign:projectFromAssign,
-                username:username, diffCreateDocument:diffCreateDocument]
+                username:username, diffCreateDocument:diffCreateDocument, dateDocumentCreated:documentInformations?.creationDate]
     }
 
     @Secured(['ROLE_ADMIN'])
