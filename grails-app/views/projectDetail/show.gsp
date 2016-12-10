@@ -28,7 +28,8 @@
                     <tr><td class="tdizq"><strong><label>Descripción </strong></td><td> ${this.projectDetail?.description}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
-                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Rut Participante</strong></td><td>${partyFromAssign.partyId}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Nombre Participante </strong></td><td>${partyFromAssign.firstName} ${partyFromAssign.lastName}</label></td></tr>
                   </table>
                 </div>
                 <div class="col-md-6">
@@ -44,14 +45,12 @@
                         </g:form>
                     </g:if>
                      <g:else>
-                        <label>Emitido</label><br><br><br>
+                        <label>Documento Emitido <prettytime:display date="${dateDocumentCreated}" /></label><br><br>
                     </g:else>
-                    
                     <g:form controller="document" name="downloadDocument" action="downloadDocument">
-                        <input type="hidden" name="rendicion" value="${this.projectDetail?.projectId}">
+                        <input type="hidden" name="projectId" value="${this.projectDetail?.projectId}">
                         <input class="btn btn-primary" type="submit" value="Descargar Documento">
                     </g:form>
-
                     <br><br>
                 </div>
             </div>
