@@ -37,7 +37,13 @@
                     <br><label>${this.currentProject?.name}</label>
                     <br><label>${this.currentProject?.totalAmount}</label>
                     <br><label>${this.currentProject?.description}</label>
-                    <br><label>${this.currentProject?.paidByCompleteTask}</label>
+                    <br>
+                    <label>
+                        <td>
+                            <g:if test="${this.currentProject?.paidByCompleteTask == true}">Si</g:if>
+                            <g:else>No</g:else>
+                        </td>
+                    </label>
                     <br>
                     <label>
                         <g:formatDate date="${this.currentProject?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
@@ -83,7 +89,14 @@
                         <label>${document.description}</label>
                     </div>
                     <div class="col-md-2">
-                        <label>${document.status}</label>
+                        <label>
+                            <g:if test="${document.status == 'In_Process'}">
+                                En Proceso
+                            </g:if>
+                            <g:elseif test="${document.status == 'Finished'}">
+                                Terminada
+                            </g:elseif>
+                        </label>
                     </div>
                     <div class="col-md-2">
                         <label>
