@@ -23,3 +23,14 @@
 .titulotareas{
   margin-left: 15px;
 }
+.footer{
+  background-color: #4298B8;
+}
+.titulo1{
+  font-size: 48px;
+  font-family: fantasy;
+}
+.subtitulo{
+  font-size: 38px;
+  font-family: sans-serif;
+}

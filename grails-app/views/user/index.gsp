@@ -4,6 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+        <asset:stylesheet src="kustomer.css"/>
         <title>Lista de Usuarios</title>
     </head>
     <body>

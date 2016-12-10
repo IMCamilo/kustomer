@@ -4,6 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
+        <asset:stylesheet src="kustomer.css"/>
         <title>Presupuestos</title>
     </head>
     <body>

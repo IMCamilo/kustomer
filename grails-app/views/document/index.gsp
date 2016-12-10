@@ -4,6 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'document.label', default: 'Document')}" />
+        <asset:stylesheet src="kustomer.css"/>
         <title>Documentos emitidos</title>
     </head>
     <body>

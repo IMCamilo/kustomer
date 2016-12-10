@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
+  <asset:stylesheet src="kustomer.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
@@ -32,7 +33,7 @@
             <div class="navbar-collapse collapse" aria-expanded="false" >
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Perfil</a></li>
@@ -42,7 +43,7 @@
                 </ul>
                  <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="project" action="index">Proyectos</g:link></li>

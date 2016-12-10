@@ -4,6 +4,7 @@
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'role.label', default: 'Role')}" />
+        <asset:stylesheet src="kustomer.css"/>
         <title>Roles</title>
     </head>
     <body>

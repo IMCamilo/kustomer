@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
+<asset:stylesheet src="kustomer.css"/>
 <asset:link rel="icon" href="icono.png" type="image/x-ico" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -33,7 +34,7 @@
             <div class="navbar-collapse collapse" aria-expanded="false" >
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Perfil</a></li>
@@ -62,7 +63,7 @@
                 </ul>
                  <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Participantes<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="party" action="index">Participantes</g:link></li>
@@ -73,7 +74,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Documentos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="document" action="index">Emitidos</g:link></li>

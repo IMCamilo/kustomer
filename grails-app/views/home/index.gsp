@@ -4,15 +4,13 @@
         <meta name="layout" content="main" />
         <meta charset="UTF-8">
         <asset:link rel="icon" href="icono.png" type="image/x-ico" />
+        <asset:stylesheet src="kustomer.css"/>
         <title>Document</title>
     </head>
-    <body>
-
-        <h3><g:link controller="document" action="index">Documentos</g:link></h3>
-        <h3><g:link controller="party" action="index">Participantes</g:link></h3>
-        <h3><g:link controller="project" action="index">Proyectos</g:link></h3>
-        <h3><g:link controller="projectDetail" action="index">Asignar Proyectos</g:link></h3>
-        <h3><g:link controller="projectBudget" action="index">Asignar Presupuestos</g:link></h3>
-        
+    <body><br>
+        <center><strong><h1 class="titulo1">BIENVENIDOS A KUSTOMER CRM</h1></strong></center>
+        <center><label>________________________________________________________________</label></center>
+        <center><h2 class="subtitulo">CONSTRUCTORA JOPIA SPA</h2></center>
+        <br>
     </body>
 </html>
