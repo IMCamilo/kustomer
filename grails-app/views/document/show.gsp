@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-md-3">
                     <g:form controller="document" name="downloadDocument" action="downloadDocument">
-                        <input type="hidden" name="projectId" value="${this.projectDetail?.projectId}">
+                        <input type="hidden" name="projectId" value="${currentProject?.id}">
                         <input class="btn btn-primary" type="submit" value="Descargar Documento">
                     </g:form>
                 </div>
