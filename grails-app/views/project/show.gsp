@@ -3,6 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'project.label', default: 'Project')}" />
+        <asset:stylesheet src="kustomer.css"/>
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -10,42 +11,40 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista de Proyectos</g:link></li>
+                <li><g:link class="create" action="create">Nuevo Proyecto</g:link></li>
             </ul>
         </div>
         <div id="show-project" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+            <h1>Proyectos</h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}
                 </div>
             </g:if>
-            
-            <g:hiddenField name="version" value="${this.project?.version}" />
-            <br>
-            <br><label>Codigo proyecto : ${this.project?.codeProject}</label>
-            <br><label>
-                <g:if test="${this.project?.paidByCompleteTask == true}">Pago por tarea completada : Si</g:if>
-                <g:else>Pago por tarea completada : No</g:else>
-            </label>
-            <br><label>Monto total : ${this.project?.totalAmount}</label>
-            <br><label>Creado por : ${this.project?.createdBy}</label>
-            <br><label>Nombre : ${this.project?.name}</label>
-            <br><label>Descripcion : ${this.project?.description}</label>
-            <br><label>Fecha creación : <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-            <br><label>Desde fecha : <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-            <br><label>Hasta fecha : <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-            
-            <br><br>
 
-            <h2>Tareas</h2>
+            <g:hiddenField name="version" value="${this.project?.version}" />
+            <table class="mostrarparty">
+              <tr><td class="tdizq"><strong><label>Codigo proyecto </strong></td><td> ${this.project?.codeProject}</label></td></tr>
+              <tr><td class="tdizq"><strong><label>
+                <g:if test="${this.project?.paidByCompleteTask == true}">Pago por tarea completada </strong> <td> Si</td></g:if>
+                <g:else>Pago por tarea completada  <td>No</td>  </g:else> </label></td></tr>
+              <tr><td class="tdizq"><strong><label>Monto total  </strong></td><td>${this.project?.totalAmount}</label></td></tr>
+              <tr><td class="tdizq"><strong><label>Creado por  </strong></td><td>${this.project?.createdBy}</label></td></tr>
+              <tr><td class="tdizq"><strong><label>Nombre </strong></td><td> ${this.project?.name}</label></td></tr>
+              <tr><td class="tdizq"><strong><label>Descripcion </strong></td><td> ${this.project?.description}</label></td></tr>
+              <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.project?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+              <tr><td class="tdizq"><strong><label>Desde fecha </strong></td><td> <g:formatDate date="${this.project?.fromDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+              <tr><td class="tdizq"><strong><label>Hasta fecha </strong></td><td> <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+            </table>
+
+            <h2 class="titulotareas">Tareas</h2>
             <table style="width:70%" id="tabla1">
                 <thead>
                     <tr>
-                        <td>Nombre</td>
-                        <td>Estado</td>
-                        <td>Descripción</td>
-                        <td>Acción</td>
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Estado</strong></td>
+                        <td><strong>Descripción</strong></td>
+                        <td><strong>Acción</strong></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,13 +61,13 @@
             <input style="width:70%" class="btn btn-link" type="submit"
                  data-toggle="modal" data-target="#modalNewTask" value="Nueva tarea">
 
-            <h2>Presupuestos</h2>
+            <h2 class="titulotareas">Presupuestos</h2>
             <table style="width:70%" id="tabla">
                 <thead>
                     <tr>
-                        <td>Nombre</td>
-                        <td>Monto</td>
-                        <td>Descripción</td>
+                        <td><strong>Nombre</strong></td>
+                        <td><strong>Monto</strong></td>
+                        <td><strong>Descripción</strong></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,7 +83,7 @@
             <input style="width:70%" class="btn btn-link" type="submit"
                  data-toggle="modal" data-target="#modalNewBudget" value="Nuevo presupuesto">
             <br><br>
-            
+
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
@@ -111,7 +110,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="modal fade" id="modalNewTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
