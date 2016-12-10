@@ -4,6 +4,10 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
+import pl.touk.excel.export.WebXlsxExporter
+import pl.touk.excel.export.XlsxExporter
+import pl.touk.excel.export.getters.LongToDatePropertyGetter
+
 @Transactional(readOnly = true)
 class DocumentController {
 
@@ -133,4 +137,38 @@ class DocumentController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    @Secured(['ROLE_ADMIN'])
+    def downloadDocument() {
+        def currentProject = Project.findById(params.projectId)
+        //budgets
+        def listBudgetForProject = ProjectBudget.findAll("from ProjectBudget where project=" + params.projectId)
+        //tasks
+        def listTaskForProject = ProjectTask.findAll("from ProjectTask where project=" + params.projectId)
+        //parties
+        def partiesInProject = ProjectDetail.findAll("from ProjectDetail where project=" + params.projectId)
+        def listPartiesForProject = []
+        partiesInProject.each {
+            def detailParty = Party.findById(it.partyId)
+            def currentParty = [:]
+            currentParty.partyId = detailParty.partyId
+            currentParty.firstName = detailParty.firstName
+            currentParty.lastName = detailParty.lastName
+            currentParty.mail = detailParty.mail
+            currentParty.address = detailParty.address
+            listPartiesForProject.add(currentParty)
+        }
+
+        String path = System.getProperty("user.dir")+"${File.separator}grails-app${File.separator}base${File.separator}templates${File.separator}documentBase.xlsx"
+
+        new WebXlsxExporter(path).with {
+            setResponseHeaders(response)
+            //putCellValue(//fila,//columna,//texto)
+            putCellValue(20, 2, "FIRMA ADMINISTRADOR")
+            putCellValue(20, 6, "FIRMA RESPONSABLE")
+            save(response.outputStream)
+        }
+
+    }
+
 }

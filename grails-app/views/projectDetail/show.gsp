@@ -41,8 +41,13 @@
                             data-toggle="modal" value="Emitir Documento">
                         <br><br>
                     </g:form>
-                    <input style="width:50%" class="btn btn-info" type="submit"
-                    data-toggle="modal" value="Descargar Documento">
+                    
+                    
+                    <g:form controller="document" name="downloadDocument" action="downloadDocument">
+                        <input type="hidden" name="rendicion" value="${this.projectDetail?.projectId}">
+                        <input class="btn btn-primary" type="submit" value="Descargar Documento">
+                    </g:form>
+
                     <br><br>
                 </div>
             </div>
