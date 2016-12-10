@@ -20,7 +20,6 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <div class="mostrardiv">
               <table class="mostrarparty">
                 <tr><td class="tdizq"><strong>Genero</strong></td><td> ${this.party?.gender}</td></tr>
                 <tr><td class="tdizq"><strong>Apellido</strong></td><td> ${this.party?.lastName}</td></tr>
@@ -33,8 +32,7 @@
                 <tr><td class="tdizq"><strong>Creado por</strong></td><td> ${this.party?.createdBy}</td></tr>
                 <tr><td class="tdizq"><strong>Rut</strong></td><td> ${this.party?.partyId}</td></tr>
                 <tr><td class="tdizq"><strong>Representante</strong></td><td> ${this.party?.representative}</td></tr>
-              </table>
-            </div>
+              </table>       
 
             <g:form resource="${this.party}" method="DELETE">
                 <fieldset class="buttons">

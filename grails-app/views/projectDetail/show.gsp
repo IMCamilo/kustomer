@@ -3,31 +3,33 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectDetail.label', default: 'ProjectDetail')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <asset:stylesheet src="kustomer.css"/>
+        <title>Detalle de Proyecto</title>
     </head>
     <body>
         <a href="#show-projectDetail" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista de Asignaciones</g:link></li>
+                <li><g:link class="create" action="create">Nueva Asignación</g:link></li>
             </ul>
         </div>
         <div id="show-projectDetail" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+            <h1>Detalle de Asignaciones</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-                
+
             <div class="row">
                 <div class="col-md-6">
-                    <br><label>Creado por : ${this.projectDetail?.createdBy}</label>
-                    <br><label>Descripción : ${this.projectDetail?.description}</label>
-                    <br><label>Proyecto : ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label>
-                    <br><label>Fecha creación : <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label>
-                    <br><label>Participante : ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label>
-                    <br><br>
+                  <table class="mostrarparty">
+                    <tr><td class="tdizq"><strong><label>Creado por </strong></td><td> ${this.projectDetail?.createdBy}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Descripción </strong></td><td> ${this.projectDetail?.description}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label></td></tr>
+                  </table>
                 </div>
                 <div class="col-md-6">
                     <br>
@@ -44,7 +46,7 @@
                     <br><br>
                 </div>
             </div>
-                
+
             <g:form resource="${this.projectDetail}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.projectDetail}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
