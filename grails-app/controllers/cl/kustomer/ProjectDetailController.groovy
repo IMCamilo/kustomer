@@ -27,15 +27,7 @@ class ProjectDetailController {
         def listPartiesForProject = ProjectDetail.findAll("from ProjectDetail where project=" + projectDetail.projectId)
         //document information
         def documentInformations = Document.find("from Document where projectDetail="+projectDetail.id+" order by id desc")
-        //
-        println "====> $documentInformations.createdBy"
-        println "====> $documentInformations.creationDate"
-        println "====> $documentInformations.projectDetailId"
-        println "====> $documentInformations.projectId"
-
-        println "diferencia : ${new Date() - documentInformations.creationDate}"
-        
-        if()
+        //difference for enable create document
         def diffCreateDocument = new Date() - documentInformations.creationDate
 
         def principal = springSecurityService.principal

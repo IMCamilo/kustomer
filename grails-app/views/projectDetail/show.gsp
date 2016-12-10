@@ -26,9 +26,9 @@
                   <table class="mostrarparty">
                     <tr><td class="tdizq"><strong><label>Creado por </strong></td><td> ${this.projectDetail?.createdBy}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Descripción </strong></td><td> ${this.projectDetail?.description}</label></td></tr>
-                    <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
-                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName}</label></td></tr>
                   </table>
                 </div>
                 <div class="col-md-6">
