@@ -164,8 +164,14 @@ class DocumentController {
         new WebXlsxExporter(path).with {
             setResponseHeaders(response)
             //putCellValue(//fila,//columna,//texto)
-            putCellValue(20, 2, "FIRMA ADMINISTRADOR")
-            putCellValue(20, 6, "FIRMA RESPONSABLE")
+            putCellValue(3, 2, "asf")
+            putCellValue(4, 2, "asd")
+            putCellValue(5, 2, "asf")
+            putCellValue(6, 2, "asf")
+            putCellValue(7, 2, "asf")
+            putCellValue(8, 2, "asf")
+            putCellValue(9, 2, "asf")
+            putCellValue(10, 2, "asf")
             save(response.outputStream)
         }
 

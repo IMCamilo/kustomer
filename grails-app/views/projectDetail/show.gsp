@@ -26,22 +26,23 @@
                   <table class="mostrarparty">
                     <tr><td class="tdizq"><strong><label>Creado por </strong></td><td> ${this.projectDetail?.createdBy}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Descripción </strong></td><td> ${this.projectDetail?.description}</label></td></tr>
-                    <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name} - ${projectFromAssign.id}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Proyecto </strong></td><td> ${projectFromAssign.codeProject} ${projectFromAssign.name}</label></td></tr>
                     <tr><td class="tdizq"><strong><label>Fecha creación </strong></td><td> <g:formatDate date="${this.projectDetail?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
-                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName} - ${partyFromAssign.id}</label></td></tr>
+                    <tr><td class="tdizq"><strong><label>Participante </strong></td><td> ${partyFromAssign.partyId} ${partyFromAssign.firstName} ${partyFromAssign.lastName}</label></td></tr>
                   </table>
                 </div>
                 <div class="col-md-6">
                     <br>
-                    <g:form controller="document" action="save">
-                        <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
-                        <input type="hidden" name="projectDetail" value="${this.projectDetail?.id}" required="" id="projectDetail" />
-                        <input type="hidden" name="projectId" value="${this.projectDetail?.projectId}" required="" id="projectId" />
-                        <input style="width:50%" class="btn btn-info" type="submit"
-                            data-toggle="modal" value="Emitir Documento">
-                        <br><br>
-                    </g:form>
-                    
+                    <g:if test="${diffCreateDocument>30}">
+                        <g:form controller="document" action="save">
+                            <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
+                            <input type="hidden" name="projectDetail" value="${this.projectDetail?.id}" required="" id="projectDetail" />
+                            <input type="hidden" name="projectId" value="${this.projectDetail?.projectId}" required="" id="projectId" />
+                            <input style="width:50%" class="btn btn-info" type="submit"
+                                data-toggle="modal" value="Emitir Documento">
+                            <br><br>
+                        </g:form>
+                    </g:if>
                     
                     <g:form controller="document" name="downloadDocument" action="downloadDocument">
                         <input type="hidden" name="rendicion" value="${this.projectDetail?.projectId}">
