@@ -25,6 +25,8 @@
 }
 .footer{
   background-color: #4298B8;
+  text-align: center;
+  color: #FFFFFF; 
 }
 .titulo1{
   font-size: 48px;
@@ -33,4 +35,7 @@
 .subtitulo{
   font-size: 38px;
   font-family: sans-serif;
+}
+.tamaño{
+  width: 200px; height: 200px;
 }
