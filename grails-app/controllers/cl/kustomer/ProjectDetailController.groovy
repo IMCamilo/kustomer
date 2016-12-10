@@ -27,8 +27,11 @@ class ProjectDetailController {
         def listPartiesForProject = ProjectDetail.findAll("from ProjectDetail where project=" + projectDetail.projectId)
         //document information
         def documentInformations = Document.find("from Document where projectDetail="+projectDetail.id+" order by id desc")
+        
         //difference for enable create document
-        def diffCreateDocument = new Date() - documentInformations.creationDate
+        def diffCreateDocument
+        if (documentInformations?.creationDate) diffCreateDocument = new Date() - documentInformations.creationDate
+        else diffCreateDocument = 31;
 
         def principal = springSecurityService.principal
         String username = principal.username

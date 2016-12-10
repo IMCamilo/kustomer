@@ -11,7 +11,7 @@
         <center><strong><h1 class="titulo1">BIENVENIDOS A KUSTOMER CRM</h1></strong></center>
         <center><strong><h3 class="">SOLUCIONES INTEGRALES PARA SUS PROYECTOS</h3></strong></center>
         <br>
-        <center><label>________________________________________________________________</label></center>
+        <center><label><asset:image src="iconkustomer.png" class="tamaño"/></label></center>
         <br>
         <center><h2 class="subtitulo">CONSTRUCTORA JOPIA SPA</h2></center>
         <br>
