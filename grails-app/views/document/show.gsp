@@ -59,6 +59,51 @@
                     <br><label>${this.currentProject?.createdBy}</label>
                     <br><label>${this.document?.createdBy}</label>
                 </div>
+                <div class="col-md-3">
+                     <input class="btn btn-info" type="submit"
+                        data-toggle="modal" value="Descargar Documento">
+                </div>
+            </div>
+            <div class="row">
+                <h2>Presupuestos</h2>
+                <div class="col-md-1"><label>Número</label></div>
+                <div class="col-md-2">
+                    <label>Nombre</label>
+                </div>
+                <div class="col-md-3">
+                    <label>Descripción</label>
+                </div>
+                <div class="col-md-2">
+                    <label>Monto Total</label>
+                </div>
+                <div class="col-md-2">
+                    <label>Fecha Creación</label>
+                </div>
+                <div class="col-md-2">
+                    <label>Creado Por</label>
+                </div>
+                <g:each var="budget" status="i" in="${listBudgetForProject}">
+                    <div class="col-md-1">
+                        <label>${i+1}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>${budget.name}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>${budget.description}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>${budget.totalAmount}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>
+                            <g:formatDate date="${budget?.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>${budget.createdBy}</label>
+                    </div>
+                </g:each>
             </div>
             <div class="row">
                 <h2>Tareas</h2>

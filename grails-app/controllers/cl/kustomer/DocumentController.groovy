@@ -20,12 +20,13 @@ class DocumentController {
     @Secured(['ROLE_ADMIN'])
     def show(Document document) {
         def currentProject = Project.findById(document.projectId)
+        //budgets
+        def listBudgetForProject = ProjectBudget.findAll("from ProjectBudget where project=" + document.projectId)
         //tasks
         def listTaskForProject = ProjectTask.findAll("from ProjectTask where project=" + document.projectId)
         //parties
         def partiesInProject = ProjectDetail.findAll("from ProjectDetail where project=" + document.projectId)
-       
-       def listPartiesForProject = []
+        def listPartiesForProject = []
         partiesInProject.each {
             def detailParty = Party.findById(it.partyId)
             def currentParty = [:]
@@ -38,7 +39,7 @@ class DocumentController {
         }
 
         respond document, model:[currentProject:currentProject, listTaskForProject:listTaskForProject,
-            listPartiesForProject:listPartiesForProject]
+            listPartiesForProject:listPartiesForProject, listBudgetForProject:listBudgetForProject]
     }
         
     @Secured(['ROLE_ADMIN'])
