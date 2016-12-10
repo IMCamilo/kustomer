@@ -60,8 +60,10 @@
                     <br><label>${this.document?.createdBy}</label>
                 </div>
                 <div class="col-md-3">
-                     <input class="btn btn-info" type="submit"
-                        data-toggle="modal" value="Descargar Documento">
+                    <g:form name="downloadDocument" action="downloadDocument">
+                        <input type="hidden" name="rendicion" value="${this.document.projectId}">
+                        <input class="btn btn-primary" type="submit" value="Descargar Documento">
+                    </g:form>
                 </div>
             </div>
             <div class="row">

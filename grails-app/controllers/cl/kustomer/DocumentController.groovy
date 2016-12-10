@@ -139,7 +139,7 @@ class DocumentController {
     }
 
     @Secured(['ROLE_ADMIN'])
-    def exportExcelDocument() {
+    def downloadDocument() {
         def currentProject = Project.findById(params.projectId)
         //budgets
         def listBudgetForProject = ProjectBudget.findAll("from ProjectBudget where project=" + params.projectId)
@@ -159,7 +159,7 @@ class DocumentController {
             listPartiesForProject.add(currentParty)
         }
 
-        String path = System.getProperty("user.dir")+"/base/templates/documentBase.xlsx"
+        String path = System.getProperty("user.dir")+"${File.separator}grails-app${File.separator}base${File.separator}templates${File.separator}documentBase.xlsx"
 
         new WebXlsxExporter(path).with {
             setResponseHeaders(response)
