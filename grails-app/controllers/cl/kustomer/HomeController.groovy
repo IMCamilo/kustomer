@@ -3,9 +3,15 @@ import grails.plugin.springsecurity.annotation.Secured
 
 class HomeController {
 
-    @Secured(['ROLE_ADMIN'])
+    def springSecurityService
+
+    @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index() {
-        
+        def auth = springSecurityService.authentication
+        def authorities = auth.authorities
+        boolean authenticated = auth.authenticated
+        String role = authorities[0]
+        if (role == 'ROLE_USER') redirect(controller: "client", action: "index")
     }
 
 }

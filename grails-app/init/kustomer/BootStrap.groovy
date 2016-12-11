@@ -86,18 +86,11 @@ class BootStrap {
             name : "Proyecto Celeste", description : "Tarea Uno con detalle para primer proyecto",
             creationDate : new Date()).save()
 
-        //roles de usuario
+        //relacion roles y usuarios
         UserRole.create camilo, roleAdmin
-        UserRole.withSession {
-            it.flush()
-            it.clear()
-        }
         UserRole.create david, roleAdmin
-        UserRole.withSession {
-            it.flush()
-            it.clear()
-        }
-        UserRole.create cristian, roleAdmin
+        UserRole.create cristian, rolUserStandar
+
         UserRole.withSession {
             it.flush()
             it.clear()
