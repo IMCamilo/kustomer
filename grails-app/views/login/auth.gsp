@@ -3,6 +3,11 @@
         <asset:stylesheet src="bootstrap.css"/>
         <asset:stylesheet src="login.css"/>
         <title><g:message code='springSecurity.login.title'/></title>
+        <style>
+            body {
+                background-image:url('http://www.morada.com.mx/images/fondo-constructora-en-guadalajara.jpg');
+            }
+        </style>
     </head>
     <body>
     <div id="login">
