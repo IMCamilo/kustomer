@@ -3,7 +3,7 @@
 <head>
     <asset:stylesheet src="kustomer.css"/>
     <asset:stylesheet src="hallooou.css"/>
-    <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:stylesheet src="bootstrap.css"/>
     <asset:stylesheet src="font-awesome.min.css"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
                 <div class="carousel-caption">
                     <h1 class="wow animated slideInDown">CRM Constructora Kustomer</h1>
                     <p class="intro-text wow animated slideInUp">"Construyendo tus sueños" </p>
-                    <a href="/login" class="btn btn-default btn-lg">Ingresar</a>
+                    <a href="/home" class="btn btn-default btn-lg">Ingresar</a>
                 </div>
                 <div class="overlay-detail"></div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="carousel-caption">
                     <h1 class="wow animated slideInDown">CRM Constructora Kustomer</h1>
                     <p class="intro-text wow animated slideInUp">"El cielo también existe en la tierra, nosotros lo construimos"</p>
-                    <a href="/login" class="btn btn-default btn-lg">Ingresar</a>
+                    <a href="/home" class="btn btn-default btn-lg">Ingresar</a>
                 </div>
                 <div class="overlay-detail"></div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="carousel-caption">
                     <h1 class="wow animated slideInDown">CRM Constructora Kustomer</h1>
                     <p class="intro-text wow animated slideInUp">nosotros hacemos la casa, usted el hogar" </p>
-                    <a href="/login" class="btn btn-default btn-lg">Ingresar</a>
+                    <a href="/home" class="btn btn-default btn-lg">Ingresar</a>
                 </div>
                 <div class="overlay-detail"></div>
             </div>
@@ -50,8 +50,8 @@
             <i class="fa fa-angle-right fa-2x"></i>
         </a>
     </header>
-    <asset:javascript src="jquery.min.js"/>
-    <asset:javascript src="bootstrap.min.js"/>
+    <asset:javascript src="jquery-2.2.0.js"/>
+    <asset:javascript src="bootstrap.js"/>
 </body>
 
 </html>
