@@ -50,7 +50,7 @@
             <div class="fieldcontain required">
                 <label><br>Correo
                 <span class="required-indicator">*</span></label>
-                <input type="text" name="mail" value="" required="" id="mail" />
+                <input type="email" name="mail" value="" required="" id="mail" />
             </div>
             <div class="fieldcontain required">
                 <label><br>Es empresa
@@ -71,7 +71,7 @@
             <div class="fieldcontain required">
                 <label><br>Telefono
                 <span class="required-indicator">*</span></label>
-                <input type="text" name="phone" value="" required="" id="phone" />
+                <input type="number" name="phone" value="" required="" id="phone" />
                 <input type="hidden" name="createdBy" value="${username}" required="" id="createdBy" />
             </div>
             <div class="fieldcontain required">
