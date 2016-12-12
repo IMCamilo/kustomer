@@ -9,10 +9,14 @@ class ProjectTaskController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     @Secured(['ROLE_ADMIN'])
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond ProjectTask.list(params), model:[projectTaskCount: ProjectTask.count()]
+    def index() {
+        def principal = springSecurityService.principal
+        String username = principal.username
+        def projectTaskList = ProjectTask.findAll("from ProjectTask where project=" + params.projectId)
+        [projectTaskList:projectTaskList, username:username]
     }
 
     @Secured(['ROLE_ADMIN'])
@@ -41,19 +45,7 @@ class ProjectTaskController {
         }
 
         projectTask.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'projectTask.label', default: 'ProjectTask'), projectTask.id])
-                redirect projectTask
-            }
-            '*' { respond projectTask, [status: CREATED] }
-        }
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def edit(ProjectTask projectTask) {
-        respond projectTask
+        redirect(action: "index", id: projectTask.id, params:[projectId:params.project,codeProject:params.codePro])
     }
 
     @Transactional

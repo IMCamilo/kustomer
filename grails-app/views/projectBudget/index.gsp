@@ -5,7 +5,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Presupuestos para Proyecto ${params.codeProject}</title>
+        <title>Presupuestos de Proyecto ${params.codeProject}</title>
     </head>
     <body>
         <a href="#list-projectBudget" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

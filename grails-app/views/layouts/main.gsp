@@ -48,7 +48,6 @@
                            role="button" aria-haspopup="true" aria-expanded="false">Proyectos<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="project" action="index">Proyectos</g:link></li>
-                            <li><g:link controller="projectBudget" action="index">Presupuestos</g:link></li>
                         </ul>
                     </li>
                 </ul>

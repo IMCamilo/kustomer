@@ -12,7 +12,7 @@ class ProjectBudgetController {
     def springSecurityService
 
     @Secured(['ROLE_ADMIN'])
-    def index(Integer max) {
+    def index() {
         def principal = springSecurityService.principal
         String username = principal.username
         def projectBudgetList = ProjectBudget.findAll("from ProjectBudget where project=" + params.projectId)
@@ -51,15 +51,6 @@ class ProjectBudgetController {
         }
         projectBudget.save flush:true
         redirect(action: "index", id: projectBudget.id, params:[projectId:params.project,codeProject:params.codePro])
-    }
-
-    @Secured(['ROLE_ADMIN'])
-    def edit(ProjectBudget projectBudget) {
-        def currentProject = Project.findById(projectBudget.projectId)
-        def projectList = Project.list()
-        def detailList = []
-        respond projectBudget, model:[projectList:projectList,
-            currentProject:currentProject]
     }
 
     @Transactional

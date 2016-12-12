@@ -40,7 +40,8 @@
             <div class="page-header">
                 <h1><g:link controller="projectBudget" action="index" params="[projectId: this.project?.id, 
                     codeProject:this.project?.codeProject]">Administrar Presupuestos</g:link></h1>
-                <h1><g:link controller="projectTask" action="index" params="[projectId: this.project?.id]">Administrar Tareas</g:link></h1>
+                <h1><g:link controller="projectTask" action="index" params="[projectId: this.project?.id, 
+                    codeProject:this.project?.codeProject]">Administrar Tareas</g:link></h1>
             </div>
 
             <g:form resource="${this.project}" method="DELETE">
@@ -50,53 +51,5 @@
                 </fieldset>
             </g:form>
         </div>
-        <div class="modal fade" id="modalNewBudget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Crear presupuesto para proyecto ${this.project?.codeProject}</h4>
-                    </div>
-                    <div class="modal-body">
-                    ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="modalNewTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Crear tarea para proyecto ${this.project?.codeProject}</h4>
-                    </div>
-                    <div class="modal-body">
-                    ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            $('#modalNewBudget').on('shown.bs.modal', function () {
-                $('#myInput').focus()
-            })
-            $('#modalNewTask').on('shown.bs.modal', function () {
-                $('#myInput').focus()
-            })
-        </script>
     </body>
 </html>
