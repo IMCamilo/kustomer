@@ -26,8 +26,8 @@
                 </button>
                 <a class="navbar-brand" href="/home">
                     <i class="fa grails-icon">
-                        <asset:image src="grails-cupsonly-logo-white.svg"/>
-                    </i>KUSTOMER
+                        <asset:image src="iconkustomer.png"/>
+                    </i>Kustomer
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" >
