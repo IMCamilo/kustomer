@@ -8,16 +8,24 @@
         <title>Cliente - Kustomer</title>
     </head>
     <body>
+        
         <div class="page-header">
-            
+            <h1>Bienvenido a Kustomer </h1>
+            <h1><small>PUEDES NAVEGAR EN LAS SIGUIENTES TAREAS</small></h1>
         </div>
 
         <div class="row">
             <div class="col-xs-6 col-md-6" data-toggle="tooltip" data-placement="left" title="Gestionar Documentos">
-                <h1 class="thumbnail">Visualiza el avance de tus proyectos</h1>
+                <h1 class="thumbnail">Visualiza el avance de tus proyectos asignados</h1>
+            </div>
+            <div class="col-xs-6 col-md-6" data-toggle="tooltip" data-placement="left" title="Gestionar Documentos">
+                <h1 class="thumbnail">Visualiza los presupuestos asignados a tus proyectos</h1>
             </div>
             <div class="col-xs-6 col-md-6" data-toggle="tooltip" data-placement="left" title="Gestionar Documentos">
                 <h1 class="thumbnail">Edita los datos de tu perfil</h1>
+            </div>
+            <div class="col-xs-6 col-md-6" data-toggle="tooltip" data-placement="left" title="Gestionar Documentos">
+                <h1 class="thumbnail">Comunicate con tu proveedor</h1>
             </div>
         </div>       
     </body>
