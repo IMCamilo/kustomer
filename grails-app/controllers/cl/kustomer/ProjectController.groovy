@@ -35,10 +35,20 @@ class ProjectController {
             println "cantidad tareas = ${listTask.size()}, cantidad tareas completas : ${qtyTaskFinished}"
         }
         qtyTask=qtyTask*10
-        qtyTaskFinished=qtyTaskFinished*10
+        def percentyTaskFinished
+        
+        if  (qtyTaskFinished < 1 || qtyTask < 1) {
+            percentyTaskFinished = 0
+        } else {
+            percentyTaskFinished = ( qtyTaskFinished/qtyTask ) * 100
+        }
         println "qty tareas => $qtyTask"
         println "qty tareas finalizadas => $qtyTaskFinished"
-        respond project, model:[username:username, qtyTask:qtyTask, qtyTaskFinished:qtyTaskFinished]
+
+    
+
+
+        respond project, model:[username:username, qtyTask:qtyTask, percentyTaskFinished:percentyTaskFinished]
     }
 
     @Secured(['ROLE_ADMIN'])

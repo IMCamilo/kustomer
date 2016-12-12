@@ -14,16 +14,24 @@
 
         <div class="row">
             <div class="col-xs-6 col-md-3" data-toggle="tooltip" data-placement="left" title="Gestionar Documentos">
-                <a href="/document/" class="thumbnail"><img src="http://tommuir.net/img/icon-projects.png" alt="img doc"></a>
+                <g:link controller="document">
+                    <img src="http://www.auth4me.com/wp-content/uploads/2012/04/Document-Logo-150x150.png" alt="img doc">
+                </g:link>
             </div>
             <div class="col-xs-6 col-md-3" data-toggle="tooltip" data-placement="left" title="Gestionar Asignaciones">
-                <a href="/projectDetail/" class="thumbnail"><img src="http://ciarancanavan.com/images/projects.png" alt="img assi"></a>
+                <g:link controller="projectDetail">
+                    <img src="https://www.gimmal.com/wp-content/uploads/2015/08/Gimmal-Market-Icons_SAP-150x150.png" alt="img assi">
+                </g:link>
             </div>
             <div class="col-xs-6 col-md-3" data-toggle="tooltip" data-placement="left" title="Gestionar Participantes">
-                <a href="/party" class="thumbnail"><img src="http://givebycell.com/wp-content/uploads/2015/09/Give_clienticon_community.png" alt="img part"></a>
+                <g:link controller="party">
+                    <img src="http://sharepointmaven.com/wp-content/uploads/2015/06/team-site-icon-150x150.png" alt="img part">
+                </g:link>
             </div>
             <div class="col-xs-6 col-md-3" data-toggle="tooltip" data-placement="left" title="Gestionar Proyectos">
-                <a href="/project" class="thumbnail"><img src="http://www.lauravenuto.com/wp-content/uploads/laura-venuto-services-icon-special-projects.png" alt="img pro"></a>
+                <g:link controller="project">
+                    <img src="http://sharepointmaven.com/wp-content/uploads/2016/03/task-icon-150x150.png" alt="img pro">
+                </g:link>
             </div>
         </div>
         <script>
