@@ -4,18 +4,18 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Ver Presupuestos</title>
+        <title>Presupuestos de proyecto ${currentProject?.codeProject} ${currentProject?.name}</title>
     </head>
     <body>
         <a href="#show-projectBudget" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index">Lista de Presupuestos</g:link></li>
+                <li><g:link class="list" action="index" params="[projectId:currentProject?.id]">Lista de Presupuestos</g:link></li>
             </ul>
         </div>
         <div id="show-projectBudget" class="content scaffold-show" role="main">
-            <h1>Presupuestos</h1>
+            <h1>Presupuestos de proyecto ${currentProject?.codeProject} ${currentProject?.name}</h1>
             <g:if test="${flash.message}"><div class="message" role="status">${flash.message}</div></g:if>
             <table class="mostrarparty">
             <tr><td class="tdizq"><strong><label>Creado por </strong></td><td> ${this.projectBudget?.createdBy}</label></td></tr>

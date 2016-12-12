@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <title>Edicion presupuesto de proyecto ${currentProject.codeProject} ${currentProject.name}</title>
         <asset:stylesheet src="autocomplete.css"/>
         <asset:stylesheet src="kustomer.css"/>
     </head>
@@ -12,11 +12,11 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index" params="[projectId:currentProject.id]"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
         <div id="edit-projectBudget" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+            <h1>Edicion presupuesto de proyecto ${currentProject.codeProject} ${currentProject.name}</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -27,10 +27,11 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
+            <br>
             <g:form resource="${this.projectBudget}" method="PUT">
                 <g:hiddenField name="version" value="${this.projectBudget?.version}" />
-                <g:hiddenField name="projectId" value="${params?.projectId}" />
-                <g:hiddenField name="codePro" value="${params?.codeProject}" />
+                <g:hiddenField name="projectId" value="${currentProject.id}" />
+                <g:hiddenField name="codePro" value="${currentProject.codeProject}" />
 
                 <div class="fieldcontain required espacio">
                     <label for="name">Nombre del presupuesto

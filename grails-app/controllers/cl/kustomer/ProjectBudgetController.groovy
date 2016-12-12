@@ -13,10 +13,11 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def index() {
+        def currentProject = Project.find("from Project where id=" + params.projectId)
         def principal = springSecurityService.principal
         String username = principal.username
         def projectBudgetList = ProjectBudget.findAll("from ProjectBudget where project=" + params.projectId)
-        model:[projectBudgetList:projectBudgetList, username:username]
+        model:[projectBudgetList:projectBudgetList, username:username, currentProject:currentProject]
     }
 
     @Secured(['ROLE_ADMIN'])
@@ -55,7 +56,8 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def edit(ProjectBudget projectBudget) {
-        respond projectBudget
+        def currentProject = Project.find("from Project where id=" + projectBudget.projectId)
+        respond projectBudget, model:[currentProject:currentProject]
     }
 
     @Transactional

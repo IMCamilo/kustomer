@@ -5,7 +5,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Presupuestos de Proyecto ${params.codeProject}</title>
+        <title>Presupuestos de Proyecto ${currentProject.codeProject} ${currentProject.name}</title>
     </head>
     <body>
         <a href="#list-projectBudget" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -16,9 +16,10 @@
         </div>
         <g:form action="save">
             <br>
+            <h1>Crear presupuestos para proyecto ${currentProject.codeProject} ${currentProject.name}</h1>
             <input type="hidden" name="createdBy" value="${username}" required=""/>
-            <input type="hidden" name="project" value="${params.projectId}" required="">
-            <input type="hidden" name="codePro" value="${params.codeProject}" required="">
+            <input type="hidden" name="project" value="${currentProject.id}" required="">
+            <input type="hidden" name="codePro" value="${currentProject.codeProject}" required="">
             
             <div class="fieldcontain required espacio">
                 <label for="name">Nombre del presupuesto
@@ -51,7 +52,7 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <h1>Presupuestos para proyecto ${params.codeProject}</h1>
+            <h1>Lista de presupuestos de proyecto ${currentProject.codeProject} ${currentProject.name}</h1>
             <table>
                 <thead>
                     <tr>
@@ -67,7 +68,7 @@
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
                             <td>
                                 <g:link controller="projectBudget" action="show" params="[id:projectBudget.id, 
-                    projectId:params.projectId]">Detalles</g:link>
+                    projectId:currentProject.id]">Detalles</g:link>
                             </td>
                             <td>${projectBudget.name}</td>
                             <td>${projectBudget.description}</td>
