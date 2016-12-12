@@ -27,9 +27,9 @@
             </div>
         </div>
         <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
     </body>
 </html>
