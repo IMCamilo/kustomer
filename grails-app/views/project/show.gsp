@@ -38,52 +38,8 @@
             </table>
 
             <h2 class="titulotareas">Tareas</h2>
-            <table style="width:70%" id="tabla1">
-                <thead>
-                    <tr>
-                        <td><strong>Nombre</strong></td>
-                        <td><strong>Estado</strong></td>
-                        <td><strong>Descripción</strong></td>
-                        <td><strong>Acción</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <g:each var="tasks" status="i" in="${taskList}">
-                        <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td>${tasks.name}</td>
-                            <td>${tasks.status}</td>
-                            <td>${tasks.description}</td>
-                            <td>Aprobar</td>
-                        </tr>
-                    </g:each>
-                </tbody>
-            </table>
-            <input style="width:70%" class="btn btn-link" type="submit"
-                 data-toggle="modal" data-target="#modalNewTask" value="Nueva tarea">
-
             <h2 class="titulotareas">Presupuestos</h2>
-            <table style="width:70%" id="tabla">
-                <thead>
-                    <tr>
-                        <td><strong>Nombre</strong></td>
-                        <td><strong>Monto</strong></td>
-                        <td><strong>Descripción</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <g:each var="budgets" status="i" in="${budgetList}">
-                        <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td>${budgets.name}</td>
-                            <td>${budgets.totalAmount}</td>
-                            <td>${budgets.description}</td>
-                        </tr>
-                    </g:each>
-                </tbody>
-            </table>
-            <input style="width:70%" class="btn btn-link" type="submit"
-                 data-toggle="modal" data-target="#modalNewBudget" value="Nuevo presupuesto">
-            <br><br>
-
+            
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
