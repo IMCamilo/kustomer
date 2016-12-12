@@ -9,9 +9,12 @@ class HomeController {
     def index() {
         def auth = springSecurityService.authentication
         def authorities = auth.authorities
-        boolean authenticated = auth.authenticated
         String role = authorities[0]
         if (role == 'ROLE_USER') redirect(controller: "client", action: "index")
+
+
+        
+
     }
 
 }
