@@ -65,7 +65,10 @@
                 <tbody>
                     <g:each var="projectBudget" status="i" in="${projectBudgetList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td><a href="show/${projectBudget.id}">Ver</a></td>
+                            <td>
+                                <g:link controller="projectBudget" action="show" params="[id:projectBudget.id, 
+                    projectId:params.projectId]">Detalles</g:link>
+                            </td>
                             <td>${projectBudget.name}</td>
                             <td>${projectBudget.description}</td>
                             <td>${projectBudget.totalAmount}</td>

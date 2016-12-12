@@ -53,27 +53,15 @@ class ProjectBudgetController {
         redirect(action: "index", id: projectBudget.id, params:[projectId:params.project,codeProject:params.codePro])
     }
 
+    @Secured(['ROLE_ADMIN'])
+    def edit(ProjectBudget projectBudget) {
+        respond projectBudget
+    }
+
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def update() {
-        def p = null
-
-        try {
-            String[] projectInForm = ((String) params.projectId).split(" - ");
-            p = Project.findById(projectInForm[1])
-        } catch (Exception e) {
-            println "Error vaclidando presupuesto ${e.getMessage()}"
-        }
-
-        if (!p) {
-            flash.message = "Debes seleccionar al menos un proyecto para este presupuesto"
-            redirect(controller: "projectBudget", action: "create")
-            return
-        }
-        params.project = p.id
-
-        def projectBudget = new ProjectBudget(params)
-
+    def update(ProjectBudget projectBudget) {
+      
         if (projectBudget == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -87,14 +75,8 @@ class ProjectBudgetController {
         }
 
         projectBudget.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'projectBudget.label', default: 'ProjectBudget'), projectBudget.id])
-                redirect projectBudget
-            }
-            '*'{ respond projectBudget, [status: OK] }
-        }
+        redirect(action: "index", id: projectBudget.id, params:[projectId:params.projectId,codeProject:params.codePro])
+   
     }
 
     @Transactional
