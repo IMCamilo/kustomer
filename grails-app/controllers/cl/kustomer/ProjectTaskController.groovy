@@ -13,15 +13,17 @@ class ProjectTaskController {
 
     @Secured(['ROLE_ADMIN'])
     def index() {
+        def currentProject = Project.find("from Project where id=" + params.projectId)
         def principal = springSecurityService.principal
         String username = principal.username
         def projectTaskList = ProjectTask.findAll("from ProjectTask where project=" + params.projectId)
-        [projectTaskList:projectTaskList, username:username]
+        [projectTaskList:projectTaskList, username:username, currentProject:currentProject]
     }
 
     @Secured(['ROLE_ADMIN'])
     def show(ProjectTask projectTask) {
-        respond projectTask
+        def currentProject = Project.find("from Project where id=" + params.projectId)
+        respond projectTask, model:[currentProject:currentProject]
     }
 
     @Secured(['ROLE_ADMIN'])
@@ -48,9 +50,16 @@ class ProjectTaskController {
         redirect(action: "index", id: projectTask.id, params:[projectId:params.project,codeProject:params.codePro])
     }
 
+    @Secured(['ROLE_ADMIN'])
+    def edit(ProjectTask projectTask) {
+        def currentProject = Project.find("from Project where id=" + params.projectId)
+        respond projectTask, model: [currentProject:currentProject]
+    }
+
     @Transactional
     @Secured(['ROLE_ADMIN'])
     def update(ProjectTask projectTask) {
+
         if (projectTask == null) {
             transactionStatus.setRollbackOnly()
             notFound()
@@ -64,14 +73,7 @@ class ProjectTaskController {
         }
 
         projectTask.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'projectTask.label', default: 'ProjectTask'), projectTask.id])
-                redirect projectTask
-            }
-            '*'{ respond projectTask, [status: OK] }
-        }
+        redirect(action: "index", id: projectTask.id, params:[projectId:params.project,codeProject:params.codePro])
     }
 
     @Transactional

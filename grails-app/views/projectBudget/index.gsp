@@ -48,10 +48,10 @@
 
         </g:form>
         <div id="list-projectBudget" class="content scaffold-list" role="main">
-            <h1>Lista de Presupuestos para Proyecto ${params.codeProject}</h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
+            <h1>Presupuestos para proyecto ${params.codeProject}</h1>
             <table>
                 <thead>
                     <tr>
