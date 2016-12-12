@@ -5,15 +5,26 @@
         <meta charset="UTF-8">
         <asset:link rel="icon" href="icono.png" type="image/x-ico" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Home</title>
+        <title>Administrador - Kustomer</title>
     </head>
-    <body><br>
-        <center><strong><h1 class="titulo1">BIENVENIDOS A KUSTOMER CRM</h1></strong></center>
-        <center><strong><h3 class="">SOLUCIONES INTEGRALES PARA SUS PROYECTOS</h3></strong></center>
-        <br>
-        <center><label><asset:image src="iconkustomer.png" class="tamaño"/></label></center>
-        <br>
-        <center><h2 class="subtitulo">CONSTRUCTORA JOPIA SPA</h2></center>
-        <br>
+    <body>
+        <div class="page-header">
+            <h1>Página de administración <small>CRM KUSTOMER</small></h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="/document/" class="thumbnail"><img src="http://tommuir.net/img/icon-projects.png" alt="img doc">DOCUMENTOS</a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="/projectDetail/" class="thumbnail"><img src="http://ciarancanavan.com/images/projects.png" alt="img assi">ASIGNACIONES</a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="/party" class="thumbnail"><img src="http://givebycell.com/wp-content/uploads/2015/09/Give_clienticon_community.png" alt="img part">PARTICIPANTES</a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="/project" class="thumbnail"><img src="http://www.lauravenuto.com/wp-content/uploads/laura-venuto-services-icon-special-projects.png" alt="img pro">PROYECTOS</a>
+            </div>
+        </div>
     </body>
 </html>

@@ -3,9 +3,11 @@
     <head>
         <meta name="layout" content="usermain" />
         <meta charset="UTF-8">
-        <title>Inicio - Kustomer - CRM</title>
+         <asset:link rel="icon" href="icono.png" type="image/x-ico" />
+        <asset:stylesheet src="kustomer.css"/>
+        <title>Cliente - Kustomer</title>
     </head>
     <body>
-        no sé restart
+        Ver avance de tus proyectos       
     </body>
 </html>
