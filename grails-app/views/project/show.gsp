@@ -24,11 +24,11 @@
 
 
             <g:if test="${this.project?.paidByCompleteTask == true}">
-                <h4></h4>
+                <h4>Porcentaje de avance proyecto ${qtyTask}  ${qtyTaskFinished}</h4>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        70% Completado
+                    <div class="progress-bar progress-bar-striped active" role="progressbar"
+                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        40%
                     </div>
                 </div>
             </g:if>
