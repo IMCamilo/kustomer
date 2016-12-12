@@ -12,7 +12,6 @@
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
                 <li><g:link class="list" action="index">Lista de Presupuestos</g:link></li>
-                <li><g:link class="create" action="create">Nuevo Presupuesto</g:link></li>
             </ul>
         </div>
         <div id="show-projectBudget" class="content scaffold-show" role="main">
