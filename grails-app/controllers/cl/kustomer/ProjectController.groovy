@@ -21,29 +21,18 @@ class ProjectController {
     def show(Project project) {
         def principal = springSecurityService.principal
         String username = principal.username
-        def totalTask = 0
+        def totalTask = 1
         def qtyTaskFinished = 0
         if(project.paidByCompleteTask == true) {
             def listTask = Project.findAll("from ProjectTask where project=" + project.id)
-            println "list task"
             totalTask = listTask.size()
-            println "cantidad tareas => ${listTask.size()}"
             listTask.each {
-                println "===> estado tareas =====> $it.status"
                 if("Finished".equals(it.status)) qtyTaskFinished += 1 
             }
-            println "cantidad tareas = ${listTask.size()}, cantidad tareas completas : ${qtyTaskFinished}"
         }
         totalTask=totalTask
         Double percentyTaskFinished
         percentyTaskFinished = ( qtyTaskFinished/totalTask ) * 100
-        println "qty tareas => $totalTask"
-        println "qty tareas finalizadas => $qtyTaskFinished"
-        println "porcentaje finalizadas => $percentyTaskFinished"
-
-    
-
-
         respond project, model:[username:username, totalTask:totalTask, percentyTaskFinished:percentyTaskFinished.round()]
     }
 

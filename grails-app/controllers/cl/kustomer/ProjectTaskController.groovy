@@ -60,6 +60,7 @@ class ProjectTaskController {
     @Secured(['ROLE_ADMIN'])
     def update(ProjectTask projectTask) {
 
+        println "parametesr : $params"
         if (projectTask == null) {
             transactionStatus.setRollbackOnly()
             notFound()
