@@ -19,11 +19,9 @@ class ProjectController {
 
     @Secured(['ROLE_ADMIN'])
     def show(Project project) {
-        def taskList = ProjectTask.findAll("from ProjectTask where project=" + project.id)
-        def budgetList = ProjectBudget.findAll("from ProjectBudget where project=" + project.id)
         def principal = springSecurityService.principal
         String username = principal.username
-        respond project, model:[username:username, taskList:taskList, budgetList:budgetList]
+        respond project, model:[username:username]
     }
 
     @Secured(['ROLE_ADMIN'])
