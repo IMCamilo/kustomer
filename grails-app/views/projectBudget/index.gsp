@@ -5,30 +5,61 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'projectBudget.label', default: 'ProjectBudget')}" />
         <asset:stylesheet src="kustomer.css"/>
-        <title>Presupuestos</title>
+        <title>Presupuestos para Proyecto ${params.codeProject}</title>
     </head>
     <body>
         <a href="#list-projectBudget" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create">Nuevo Presupuesto</g:link></li>
             </ul>
         </div>
+        <g:form action="save">
+            <br>
+            <input type="hidden" name="createdBy" value="${username}" required=""/>
+            <input type="hidden" name="project" value="${params.projectId}" required="">
+            <input type="hidden" name="codePro" value="${params.codeProject}" required="">
+            
+            <div class="fieldcontain required espacio">
+                <label for="name">Nombre del presupuesto
+                    <span class="required-indicator">*</span>
+                </label>
+                <input id="name" class="typeahead" name="name" type="text" required="" placeholder="Nombre para el presupuesto">
+            </div>
+            
+            <div class="fieldcontain required espacio">
+                <label for="totalAmount">Monto total
+                    <span class="required-indicator">*</span>
+                </label>
+                <input id="totalAmount" class="typeahead" name="totalAmount" type="number" required="" placeholder="Monto para el presupuesto">
+            </div>
+            
+            <div class="fieldcontain required espacio">
+                <label for="description">Descripción del presupuesto
+                    <span class="required-indicator">*</span>
+                </label>
+                <textarea name="description" rows="4" cols="50"></textarea> 
+            </div>
+            
+            <div class="fieldcontain required espacio">
+                <label for="name"></label>
+                <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+            </div>
+
+        </g:form>
         <div id="list-projectBudget" class="content scaffold-list" role="main">
-            <h1>Lista de Presupuestos</h1>
+            <h1>Lista de Presupuestos para Proyecto ${params.codeProject}</h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-
             <table>
                 <thead>
                     <tr>
                         <th>Ver</th>
-                        <g:sortableColumn property="name" defaultOrder="desc" title="Nombre"/>
-                        <g:sortableColumn property="description" defaultOrder="desc" title="Descripción"/>
-                        <g:sortableColumn property="totalAmount" defaultOrder="desc" title="Monto Total"/>
-                        <g:sortableColumn property="creationDate" defaultOrder="desc" title="Fecha Creación"/>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Monto Total</th>
+                        <th>Fecha Creación</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,10 +76,6 @@
                     </g:each>
                 </tbody>
             </table>
-
-            <div class="pagination">
-                <g:paginate total="${projectBudgetCount ?: 0}" />
-            </div>
         </div>
     </body>
 </html>

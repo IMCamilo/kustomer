@@ -13,8 +13,10 @@ class ProjectBudgetController {
 
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond ProjectBudget.list(params), model:[projectBudgetCount: ProjectBudget.count()]
+        def principal = springSecurityService.principal
+        String username = principal.username
+        def projectBudgetList = ProjectBudget.findAll("from ProjectBudget where project=" + params.projectId)
+        model:[projectBudgetList:projectBudgetList, username:username]
     }
 
     @Secured(['ROLE_ADMIN'])
@@ -34,25 +36,7 @@ class ProjectBudgetController {
 
     @Transactional
     @Secured(['ROLE_ADMIN'])
-    def save() {
-
-        def p = null
-
-        try {
-            String[] projectInForm = ((String) params.projectId).split(" - ");
-            p = Project.findById(projectInForm[1])
-        } catch (Exception e) {
-            println "Error vaclidando presupuesto ${e.getMessage()}"
-        }
-
-        if (!p) {
-            flash.message = "Debes seleccionar al menos un proyecto para este presupuesto"
-            redirect(controller: "projectBudget", action: "create")
-            return
-        }
-        params.project = p.id
-
-        def projectBudget = new ProjectBudget(params)
+    def save(ProjectBudget projectBudget) {
 
         if (projectBudget == null) {
             transactionStatus.setRollbackOnly()
@@ -65,16 +49,8 @@ class ProjectBudgetController {
             respond projectBudget.errors, view:'create'
             return
         }
-
         projectBudget.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'projectBudget.label', default: 'ProjectBudget'), projectBudget.id])
-                redirect projectBudget
-            }
-            '*' { respond projectBudget, [status: CREATED] }
-        }
+        redirect(action: "index", id: projectBudget.id, params:[projectId:params.project,codeProject:params.codePro])
     }
 
     @Secured(['ROLE_ADMIN'])

@@ -37,9 +37,12 @@
                 <tr><td class="tdizq"><strong><label>Hasta fecha </strong></td><td> <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
             </table>
 
-            <h2 class="titulotareas">Tareas</h2>
-            <h2 class="titulotareas">Presupuestos</h2>
-            
+            <div class="page-header">
+                <h1><g:link controller="projectBudget" action="index" params="[projectId: this.project?.id, 
+                    codeProject:this.project?.codeProject]">Administrar Presupuestos</g:link></h1>
+                <h1><g:link controller="projectTask" action="index" params="[projectId: this.project?.id]">Administrar Tareas</g:link></h1>
+            </div>
+
             <g:form resource="${this.project}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.project}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
