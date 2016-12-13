@@ -32,8 +32,9 @@
                         <td>${project.totalAmount}</td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar"
-                                aria-valuenow="${project.percentyTaskFinished}" aria-valuemin="0" aria-valuemax="${project.totalTask}" style="width:${project.percentyTaskFinished}%">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+                                aria-valuenow="${project.percentyTaskFinished}" aria-valuemin="0" aria-valuemax="${project.totalTask}" 
+                                style="width:${project.percentyTaskFinished}%; color:black">
                                     ${project.percentyTaskFinished}%
                                 </div>
                             </div>
