@@ -35,7 +35,7 @@
                 <div class="fill" style="background-image:url('https://wallpaperscraft.com/image/tools_helmet_drawing_31546_3840x2160.jpg');">
                 </div>
                 <div class="carousel-caption">
-                    <h1 class="wow animated slideInDown">CRM Constructora Kustomer</h1>
+                    <h1 class="wow animated slideInDown">CRM CONSTRUCTORA JOPIA SPA</h1>
                     <p class="intro-text wow animated slideInUp">"Construyendo tus sueños" </p>
                     <a href="/home" class="btn btn-default btn-lg">Ingresar</a>
                 </div>
@@ -44,7 +44,7 @@
             <div class="item">
                 <div class="fill" style="background-image:url('http://jsedificaciones.com/wp-content/uploads/2015/12/silueta-construccion-min.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1 class="wow animated slideInDown">CRM Constructora Kustomer</h1>
+                    <h1 class="wow animated slideInDown">CRM CONSTRUCTORA JOPIA SPAr</h1>
                     <p class="intro-text wow animated slideInUp">"El cielo también existe en la tierra, nosotros lo construimos"</p>
                     <a href="/home" class="btn btn-default btn-lg">Ingresar</a>
                 </div>
@@ -66,9 +66,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <h2>Consturctora KUSTOMER</h2>
+                            <h2>CONSTRUCTORA JOPIA SPA</h2>
                             <h3 class="caption gray">"El cielo también existe en la tierra, nosotros lo construimos"</h3>
-                            <p align="justify">Constructora Kustomer asume el compromiso de aplicar el mejoramiento continuo de la calidad en todos sus procesos, con la finalidad de satisfacer los requerimientos de sus clientes y ser reconocidos en el mercado como líderes en la construcción de obras.
+                            <p align="justify">Constructora JOPIA SPA asume el compromiso de aplicar el mejoramiento continuo de la calidad en todos sus procesos, con la finalidad de satisfacer los requerimientos de sus clientes y ser reconocidos en el mercado como líderes en la construcción de obras.
                             Todos los departamentos que participen directa o indirectamente en la ejecución de las obras, deberán entregar lo mejor de sí y trabajar en forma mancomunada para lograr obras de la mejor calidad”.</p>
 
                             <blockquote><br>                                
