@@ -116,6 +116,14 @@ class PartyController {
     }
 
     @Secured(['ROLE_ADMIN'])
+    def account() {
+        def principal = springSecurityService.principal
+        String username = principal.username
+        def detailsUser = Party.findByMail(username)
+        [detailsUser:detailsUser]
+    }
+
+    @Secured(['ROLE_ADMIN'])
     protected void notFound() {
         request.withFormat {
             form multipartForm {
