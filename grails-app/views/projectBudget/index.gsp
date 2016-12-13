@@ -17,6 +17,7 @@
         <g:form action="save">
             <br>
             <h1>Crear presupuestos para proyecto ${currentProject.codeProject} ${currentProject.name}</h1>
+        <g:link controller="project" action="show" id="${currentProject.id}">Regresar al proyecto</g:link>
             <input type="hidden" name="createdBy" value="${username}" required=""/>
             <input type="hidden" name="project" value="${currentProject.id}" required="">
             <input type="hidden" name="codePro" value="${currentProject.codeProject}" required="">

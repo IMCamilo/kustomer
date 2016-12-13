@@ -15,6 +15,7 @@
         </div>
 
         <h1>Nueva tarea para proyecto ${currentProject.codeProject}</h1>
+        <g:link controller="project" action="show" id="${currentProject.id}">Regresar al proyecto</g:link>
         <g:form action="save">
             <input name="createdBy" type="hidden" value="${username}" required="">
             <input name="project" type="hidden" value="${params.projectId}" required="">
