@@ -11,7 +11,7 @@
 
         <div class="page-header">
             <h1>Bienvenido a Kustomer </h1>
-            <h1><small>PUEDES NAVEGAR PRESIONANDO EN LOS SIGUIENTES ÍCONOS</small></h1>
+            <h1><small>AQUÍ PODRÁS HACER LO SIGUIENTE: </small></h1>
         </div>
 
         <div class="row">
