@@ -13,6 +13,7 @@ class ClientController {
         if (role == 'ROLE_ADMIN') redirect(controller: "home", action: "index")
     }
 
+    @Secured(['ROLE_USER'])
     def project() {
         def auth = springSecurityService.authentication
         def authorities = auth.authorities
@@ -21,6 +22,7 @@ class ClientController {
 
     }
 
+    @Secured(['ROLE_USER'])
     def budget() {
         def auth = springSecurityService.authentication
         def authorities = auth.authorities
