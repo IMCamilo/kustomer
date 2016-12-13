@@ -47,7 +47,6 @@
                             role="button" aria-haspopup="true" aria-expanded="false">Gestionar<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><g:link controller="client" action="project">Proyectos</g:link></li>
-                            <li><g:link controller="client" action="budget">Presupuestos</g:link></li>
                         </ul>
                     </li>
                 </ul>

@@ -12,6 +12,7 @@
     <br><br><br>
 
     <div class="row">
+        
                 <h2>Detalles Proyecto</h2>
                 <div class="col-md-3">
                     <label>Código Proyecto</label>
@@ -23,7 +24,6 @@
                     <br><label>Desde Fecha</label>
                     <br><label>Hasta Fecha</label>
                     <br><label>Proyecto Creado Por</label>
-                    <br><label>Documento Creado Por</label>
                 </div>
                 <div class="col-md-6">
                     <label>${this.currentProject?.codeProject}</label>
