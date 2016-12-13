@@ -98,7 +98,7 @@
                     <div class="row text-center">
                         <div class="col-md-12">
                             <h2>Contacto</h2>
-                            <h3 class="caption gray">Nos interesara saber de ti</h3>
+                            <h3 class="caption gray">Nos interesa saber de ti</h3>
                         </div><!-- /.col-md-12 -->
 
                     </div><!-- /.row -->
