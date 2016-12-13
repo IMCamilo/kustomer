@@ -43,12 +43,6 @@
                 <div class="overlay-detail"></div>
             </div>
         </div>
-        <a class="left carousel-control squared" href="#intro-carousel" data-slide="prev">
-            <i class="fa fa-angle-left fa-2x"></i>
-        </a>
-        <a class="right carousel-control squared" href="#intro-carousel" data-slide="next">
-            <i class="fa fa-angle-right fa-2x"></i>
-        </a>
     </header>
     <asset:javascript src="jquery-2.2.0.js"/>
     <asset:javascript src="bootstrap.js"/>
