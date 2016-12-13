@@ -40,7 +40,7 @@
                             </div>
                         </td>
                         <td><prettytime:display date="${project.creationDate}"/></td>
-                        <td><g:link action="detailProject" params="[id:project.id]">detalles</g:link></td>
+                        <td><g:link action="detail" params="[projectId:project.id]">detalles</g:link></td>
                     </tr>
                 </g:each>
             </tbody>
