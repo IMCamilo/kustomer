@@ -137,12 +137,12 @@
                                 <li><i class="fa fa-envelope fa-fw"></i>contacto@Kustomer.cl</li>
                                 <li><i class="fa fa-phone fa-fw"></i>+12345678</li>
                             </ul>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5979.391415234466!2d-72.93651748607668!3d-41.46751469940026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96183a4d6920f407%3A0x86a3f15a79a5c9df!2sPuerto+Montt%2C+X+Regi%C3%B3n!5e0!3m2!1ses!2scl!4v1481669431724" width="350" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div><!-- /.contact-address -->
 
                     </div><!-- /.row -->
                 </div><!-- /.container -->
-
-           
+          
 
           <footer>
                 <div class="container">
