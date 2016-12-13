@@ -14,19 +14,21 @@
 </head>
 
 <body id="home">
-            <nav class="navbar navbar-custom navbar-fixed-top" >
-                <div class="container">
-                   
-                        
-                            <!-- replace with your brand logo/text -->
-                        
-                            <asset:image src="logo.png" class="grails-logo" width="100" height="100"/>
-                        
-                        
-                   
-                </div><!-- /.container -->
+               
             </nav>
 
+                       <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a class="navbar-brand page-scroll" href="#page-top">
+                            <!-- replace with your brand logo/text -->
+                              <!--<span class="brand-logo"><asset:image src="logo.png" class="grails-logo" width="100" height="100"/></span>-->
+                        </a>
+                    </div>
+                  
+                    
+                </div><!-- /.container -->
+            </nav>
     <header id="intro-carousel" class="carousel slide">
         <div class="carousel-inner">
             <div class="item active">
@@ -90,6 +92,58 @@
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </section><!-- /.section -->
+
+                   <section id="contact" class="contact content-section no-bottom-pad wow fadeIn" data-wow-offset="10">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h2>Contacto</h2>
+                            <h3 class="caption gray">Nos interesa saber de ti</h3>
+                        </div><!-- /.col-md-12 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+                <div class="container">
+                    <div class="row form-container">
+
+                        <div class="col-md-8 contact-form">
+                            <h3>Envianos tu mensaje</h3>
+                            <form class="ajax-form" id="contactForm" method="post" action="assets/php/contact.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Tu Nombre..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Tu email..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Tu Numero de telefono..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4" name="message" placeholder="Tu Mensaje..." required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" name="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-fw"></i> Enviar</button>
+                                </div>
+                            </form>
+                        </div><!-- /.contact-form -->
+
+                        <div class="col-md-4 contact-address">
+                            <h3>Nuestra Dirección</h3>
+                            <p><i class="fa fa-map-marker fa-fw"></i> Calle siempre viva,
+                                <br />Puerto Montt,
+                                <br /> Chile</p>
+                            <ul>
+                                <li><i class="fa fa-envelope fa-fw"></i>contacto@Kustomer.cl</li>
+                                <li><i class="fa fa-phone fa-fw"></i>+12345678</li>
+                            </ul>
+                        </div><!-- /.contact-address -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+           
+
           <footer>
                 <div class="container">
                     <div class="row text-center">
@@ -120,7 +174,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                            &copy; 2016. AIEP.
+                            &copy; KUSTOMER 2016.
                             </div><!-- /.col-md-12 -->
 
                         </div><!-- /.row -->
@@ -134,8 +188,7 @@
             </footer><!-- /.footer -->
     <asset:javascript src="jquery-2.2.0.js"/>
     <asset:javascript src="bootstrap.js"/>
-    <asset:javascript src="assets/js/hallooou.js"/>
-
+    <asset:javascript src="hallooou.js"/>
 
 </body>
 
