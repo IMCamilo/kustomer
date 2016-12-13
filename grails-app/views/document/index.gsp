@@ -30,7 +30,7 @@
                 <tbody>
                     <g:each var="document" status="i" in="${documentList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td><a href="show/${document.id}">Ver</a></td>
+                            <td><a href="show/${document.id}"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></a></td>
                             <td>${document.id}</td>
                              <td>
                                 <g:formatDate date="${document.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>
