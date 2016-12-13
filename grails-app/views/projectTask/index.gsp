@@ -29,7 +29,7 @@
                 <label for="description">Descripción de la tarea
                     <span class="required-indicator">*</span>
                 </label>
-                <textarea name="description" rows="4" cols="50"></textarea> 
+                <textarea name="description" rows="4" cols="50"></textarea>
             </div>
             <div class="fieldcontain required espacio">
                 <label for="name"></label>
@@ -56,7 +56,7 @@
                     <g:each var="task" status="i" in="${projectTaskList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
                             <td>
-                                <g:link controller="projectTask" action="show" params="[id:task.id, projectId:currentProject.id]">Detalles</g:link>
+                                <g:link controller="projectTask" action="show" params="[id:task.id, projectId:currentProject.id]"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></g:link>
                             </td>
                             <td>${task.name}</td>
                             <td>${task.description}</td>

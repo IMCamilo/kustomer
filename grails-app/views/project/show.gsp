@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </g:if>
-                
+
             <g:hiddenField name="version" value="${this.project?.version}" />
             <table class="mostrarparty">
                 <tr><td class="tdizq"><strong><label>Codigo proyecto </strong></td><td> ${this.project?.codeProject}</label></td></tr>
@@ -49,11 +49,13 @@
                 <tr><td class="tdizq"><strong><label>Hasta fecha </strong></td><td> <g:formatDate date="${this.project?.thruDate}" type="datetime" style="LONG" timeStyle="SHORT"/></label></td></tr>
             </table>
 
-            <div class="page-header">
-                <h1><g:link controller="projectBudget" action="index" params="[projectId: this.project?.id, 
-                    codeProject:this.project?.codeProject]">Administrar Presupuestos</g:link></h1>
-                <h1><g:link controller="projectTask" action="index" params="[projectId: this.project?.id, 
-                    codeProject:this.project?.codeProject]">Administrar Tareas</g:link></h1>
+            <div>
+              <table class="mostrarparty">
+                <tr><td class="tdadmin"><strong><g:link controller="projectBudget" action="index" params="[projectId: this.project?.id,
+                    codeProject:this.project?.codeProject]" class="administrar"><img src="http://registro.cotaipec.org.mx/images/iconos_transp/i_7.png" class="ver2">&nbsp;&nbsp;Administrar Presupuestos</g:link></strong></td></tr>
+                <tr><td class="tdadmin"><strong><g:link controller="projectTask" action="index" params="[projectId: this.project?.id,
+                    codeProject:this.project?.codeProject]" class="administrar"><img src="http://www.sbpcallao.gob.pe/eva_curri.png" class="ver2">&nbsp;&nbsp;Administrar Tareas</g:link></strong></td></tr>
+              </table>
             </div>
 
             <g:form resource="${this.project}" method="DELETE">

@@ -36,7 +36,7 @@
                 <tbody>
                     <g:each var="party" status="i" in="${partyList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td><a href="show/${party.id}">Ver</a></td>
+                            <td><a href="show/${party.id}"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></a></td>
                             <td>${party.partyId}</td>
                             <td>${party.firstName}</td>
                             <td>${party.lastName}</td>

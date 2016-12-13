@@ -32,7 +32,7 @@
                 <tbody>
                     <g:each var="projectDetail" status="i" in="${projectDetailList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td><a href="show/${projectDetail.id}">Ver</a></td>
+                            <td><a href="show/${projectDetail.id}"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></a></td>
                             <td>${projectDetail.description}</td>
                             <td>
                                 <g:formatDate date="${projectDetail.creationDate}" type="datetime" style="LONG" timeStyle="SHORT"/>

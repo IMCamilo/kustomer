@@ -20,28 +20,28 @@
             <input type="hidden" name="createdBy" value="${username}" required=""/>
             <input type="hidden" name="project" value="${currentProject.id}" required="">
             <input type="hidden" name="codePro" value="${currentProject.codeProject}" required="">
-            
+
             <div class="fieldcontain required espacio">
                 <label for="name">Nombre del presupuesto
                     <span class="required-indicator">*</span>
                 </label>
                 <input id="name" class="typeahead" name="name" type="text" required="" placeholder="Nombre para el presupuesto">
             </div>
-            
+
             <div class="fieldcontain required espacio">
                 <label for="totalAmount">Monto total
                     <span class="required-indicator">*</span>
                 </label>
                 <input id="totalAmount" class="typeahead" name="totalAmount" type="number" required="" placeholder="Monto para el presupuesto">
             </div>
-            
+
             <div class="fieldcontain required espacio">
                 <label for="description">Descripción del presupuesto
                     <span class="required-indicator">*</span>
                 </label>
-                <textarea name="description" rows="4" cols="50"></textarea> 
+                <textarea name="description" rows="4" cols="50"></textarea>
             </div>
-            
+
             <div class="fieldcontain required espacio">
                 <label for="name"></label>
                 <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
@@ -67,8 +67,8 @@
                     <g:each var="projectBudget" status="i" in="${projectBudgetList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
                             <td>
-                                <g:link controller="projectBudget" action="show" params="[id:projectBudget.id, 
-                    projectId:currentProject.id]">Detalles</g:link>
+                                <g:link controller="projectBudget" action="show" params="[id:projectBudget.id,
+                    projectId:currentProject.id]"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></g:link>
                             </td>
                             <td>${projectBudget.name}</td>
                             <td>${projectBudget.description}</td>
