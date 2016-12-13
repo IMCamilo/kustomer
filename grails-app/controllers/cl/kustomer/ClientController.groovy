@@ -16,7 +16,22 @@ class ClientController {
 
     @Secured(['ROLE_USER'])
     def project() {
-        
+        def principal = springSecurityService.principal
+        String username = principal.username
+        def detailsUser = Party.findByMail(username)
+        def listAssigments = ProjectDetail.findAll("from ProjectDetail where party=" + detailsUser.id)
+        def listProjectForUser = []
+        listAssigments.each {
+            def detailProjectMap = [:]
+            def currentProject = Project.find("from Project where id="+it.projectId)
+            detailProjectMap.id = currentProject.id	
+            detailProjectMap.codeProject = currentProject.codeProject
+            detailProjectMap.name = currentProject.name
+            detailProjectMap.paidByCompleteTask = currentProject.paidByCompleteTask
+            detailProjectMap.totalAmount = currentProject.totalAmount
+            listProjectForUser.add(detailProjectMap)
+        }
+        [detailsUser:detailsUser, listProjectForUser:listProjectForUser]
     }
 
     @Secured(['ROLE_USER'])
