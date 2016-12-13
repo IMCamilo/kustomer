@@ -2,14 +2,11 @@
 <html>
     <head>
     <asset:link rel="icon" href="icono.png" type="image/x-ico" />
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'party.label', default: 'Party')}" />
+        <meta name="layout" content="usermain" />
         <asset:stylesheet src="kustomer.css"/>
         <title>Cuenta ${detailsUser.firstName} ${detailsUser.lastName}</title>
     </head>
     <body>
-
-
         <div class="row">
                 <h2>Detalles Cuenta  ${detailsUser.firstName} ${detailsUser.lastName}</h2>
                 <div class="col-md-6">

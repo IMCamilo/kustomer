@@ -36,7 +36,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                             role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><g:link controller="party" action="account">Perfil</g:link></li>
+                            <li><g:link controller="client" action="account">Perfil</g:link></li>
                             <li><g:link controller="logoff">Salir</g:link></li>
                         </ul>
                     </li>

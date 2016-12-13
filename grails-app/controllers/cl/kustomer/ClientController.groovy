@@ -94,4 +94,12 @@ class ClientController {
 
     }
 
+    @Secured(['ROLE_USER'])
+    def account() {
+        def principal = springSecurityService.principal
+        String username = principal.username
+        def detailsUser = Party.findByMail(username)
+        [detailsUser:detailsUser]
+    }
+
 }
