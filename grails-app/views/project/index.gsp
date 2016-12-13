@@ -34,7 +34,7 @@
                 <tbody>
                     <g:each var="project" status="i" in="${projectList}">
                          <tr class="${((i % 2 == 0) ? 'odd' : 'even')}">
-                            <td><a href="show/${project.id}">Ver</a></td>
+                            <td><a href="show/${project.id}"><img src="https://imagenes.es.sftcdn.net/es/scrn/3342000/3342147/file-viewer-08-535x535.png" class="ver"></a></td>
                             <td>${project?.codeProject}</td>
                             <td>${project?.name}</td>
                             <td>
