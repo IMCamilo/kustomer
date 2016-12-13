@@ -10,12 +10,12 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista de Proyectos</g:link></li>
+                <li><g:link class="create" action="create">Nuevo Proyecto</g:link></li>
             </ul>
         </div>
         <div id="edit-project" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+            <h1>Editar Proyecto</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -28,10 +28,10 @@
             </g:hasErrors>
             <g:form resource="${this.project}" method="PUT">
                 <g:hiddenField name="version" value="${this.project?.version}" />
-                codigo proyecto
-                <input type="text" name="codeProject" value="${this.project?.codeProject}" required="" id="codeProject" />
-                <br>pago por tarea completada
-
+              <table class="mostrarparty">
+                <tr><td class="tdizq"><strong>codigo proyecto</strong></td>
+                    <td><input type="text" name="codeProject" value="${this.project?.codeProject}" required="" id="codeProject" /></td></tr>
+                <tr><td class="tdizq"><strong>pago por tarea completada</strong></td><td>
                 <g:if test="${this.project?.paidByCompleteTask == true}">
                     <input type="hidden" name="_paidByCompleteTask"/>
                     <input type="checkbox" name="paidByCompleteTask" checked id="paidByCompleteTask"  />
@@ -39,15 +39,14 @@
                 <g:else>
                     <input type="hidden" name="_paidByCompleteTask"/>
                     <input type="checkbox" name="paidByCompleteTask" id="paidByCompleteTask"  />
-                </g:else>
-                
-                <br>monto total
-                <input type="number" name="totalAmount" value="${this.project?.totalAmount}" required="" id="totalAmount" />
-                <br>Nombre
-                <input type="text" name="name" value="${this.project?.name}" required="" id="name" />
-                <br>Descripcion
-                <input type="text" name="description" value="${this.project?.description}" required="" id="description" />
-                <br>hasta fecha
+                </g:else></td></tr>
+                <tr><td class="tdizq"><strong>monto total</strong></td><td>
+                <input type="number" name="totalAmount" value="${this.project?.totalAmount}" required="" id="totalAmount" /></td></tr>
+                <tr><td class="tdizq"><strong>Nombre</strong></td><td>
+                <input type="text" name="name" value="${this.project?.name}" required="" id="name" /></td></tr>
+                <tr><td class="tdizq"><strong>Descripcion</strong></td><td>
+                <input type="text" name="description" value="${this.project?.description}" required="" id="description" /></td></tr>
+                <tr><td class="tdizq"><strong>hasta fecha</strong></td><td>
                 <input type="hidden" name="thruDate" value="date.struct" />
                 <select name="thruDate_day" id="thruDate_day" aria-labelledby="thruDate">
                     <option value="1">1</option>
@@ -101,7 +100,8 @@
                     <option value="2018">2018</option>
                     <option value="2017">2017</option>
                     <option value="2016" selected="selected">2016</option>
-                </select>
+                </select></td></tr>
+              </table>
                 <br>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
