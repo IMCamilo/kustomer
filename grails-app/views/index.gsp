@@ -25,8 +25,6 @@
                               <!--<span class="brand-logo"><asset:image src="logo.png" class="grails-logo" width="100" height="100"/></span>-->
                         </a>
                     </div>
-                  
-                    
                 </div><!-- /.container -->
             </nav>
     <header id="intro-carousel" class="carousel slide">

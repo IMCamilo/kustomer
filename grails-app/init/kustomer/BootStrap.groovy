@@ -66,7 +66,7 @@ class BootStrap {
                 firstName:"Cristian", 
                 gender:"Masculino",
                 isCompany:false, 
-                lastName:"X-X", 
+                lastName:"Alvarez", 
                 mail:"cristian@kustomer.cl",
                 nationality:"Chilena", 
                 partyId:"13644290-2", 
