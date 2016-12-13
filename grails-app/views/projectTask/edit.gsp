@@ -42,6 +42,24 @@
                         </label>
                         <textarea name="description" rows="4" cols="50">${this.projectTask?.description}</textarea> 
                     </div>
+
+                    <div class="fieldcontain required espacio">
+                        <label for="description">Estado de la tarea
+                            <span class="required-indicator">*</span>
+                        </label>
+                        
+                        <select type="select" name="status" style="background-color:orange">
+                            <g:if test="${this.projectTask?.status == 'In_Process'}">
+                                <option value="${this.projectTask?.status}">En Proceso</option>
+                            </g:if>
+                            <g:elseif test="${this.projectTask?.status == 'Finished'}">
+                                <option value="${this.projectTask?.status}">Terminada</option>
+                            </g:elseif>
+                            <option value="${this.projectTask?.status}"></option>
+                            <option value="In_Process">En Proceso</option>
+                            <option value="Finished">Terminada</option>
+                        </select>
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

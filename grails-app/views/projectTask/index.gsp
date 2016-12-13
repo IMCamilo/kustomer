@@ -50,7 +50,6 @@
                         <th>Descripción</th>
                         <th>Estado</th>
                         <th>Fecha Creación</th>
-                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,16 +69,6 @@
                                 </g:elseif>
                             </td>
                             <td><prettytime:display date="${task.creationDate}"/></td>
-                            <td>
-                                <g:if test="${task?.status == 'In_Process'}">
-                                    <form action="finalizeTask" method="POST">
-                                        <input name="id" type="hidden" value="${task.id}" required="">
-                                        <input name="project" type="hidden" value="${currentProject.id}" required="">
-                                        <input name="codePro" type="hidden" value="${currentProject.codeProject}" required="">
-                                        <input type="submit" value="Finalizar" class="btn-warning">
-                                    </form>
-                                </g:if>
-                            </td>
                         </tr>
                     </g:each>
                 </tbody>

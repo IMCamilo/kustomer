@@ -32,12 +32,8 @@
                         ${percentyTaskFinished}%
                     </div>
                 </div>
-
             </g:if>
                 
-
-            
-
             <g:hiddenField name="version" value="${this.project?.version}" />
             <table class="mostrarparty">
                 <tr><td class="tdizq"><strong><label>Codigo proyecto </strong></td><td> ${this.project?.codeProject}</label></td></tr>

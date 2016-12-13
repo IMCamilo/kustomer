@@ -56,20 +56,10 @@ class ProjectTaskController {
         respond projectTask, model: [currentProject:currentProject]
     }
 
-    
-    @Transactional
-    @Secured(['ROLE_ADMIN'])
-    def finalizeTask() {
-        println "params: $params"
-        ProjectTask.executeUpdate("update ProjectTask pt set pt.status='Finished' where pt.id="+params.id)
-        redirect(action: "index", params:[projectId:params.project,codeProject:params.codePro])
-    }
-
     @Transactional
     @Secured(['ROLE_ADMIN'])
     def update(ProjectTask projectTask) {
 
-        println "parametesr : $params"
         if (projectTask == null) {
             transactionStatus.setRollbackOnly()
             notFound()

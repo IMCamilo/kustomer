@@ -21,8 +21,10 @@ class ProjectController {
     def show(Project project) {
         def principal = springSecurityService.principal
         String username = principal.username
+       
         def totalTask = 1
         def qtyTaskFinished = 0
+        
         if(project.paidByCompleteTask == true) {
             def listTask = Project.findAll("from ProjectTask where project=" + project.id)
             totalTask = listTask.size()
@@ -30,9 +32,13 @@ class ProjectController {
                 if ("Finished".equals(it.status)) qtyTaskFinished += 1 
             }
         }
-        totalTask=totalTask
         Double percentyTaskFinished
-        percentyTaskFinished = ( qtyTaskFinished/totalTask ) * 100
+        try {
+            percentyTaskFinished = ( qtyTaskFinished/totalTask ) * 100
+        } catch(ArithmeticException ae) {
+            percentyTaskFinished = 0
+            println "error con =========> $ae"
+        }
         respond project, model:[username:username, totalTask:totalTask, percentyTaskFinished:percentyTaskFinished.round()]
     }
 
