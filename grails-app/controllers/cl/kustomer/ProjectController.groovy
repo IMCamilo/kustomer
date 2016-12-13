@@ -27,7 +27,7 @@ class ProjectController {
             def listTask = Project.findAll("from ProjectTask where project=" + project.id)
             totalTask = listTask.size()
             listTask.each {
-                if("Finished".equals(it.status)) qtyTaskFinished += 1 
+                if ("Finished".equals(it.status)) qtyTaskFinished += 1 
             }
         }
         totalTask=totalTask
