@@ -18,6 +18,7 @@
                     <th>Pago por Tarea</th>
                     <th>Monto Total</th>
                     <th>Avance</th>
+                    <th>Creado el</th>
                     <th>Avance</th>
                 </tr>
             </thead>
@@ -29,8 +30,16 @@
                         <td>${project.name}</td>
                         <td>${project.paidByCompleteTask}</td>
                         <td>${project.totalAmount}</td>
-                        <td>porcentaje avance</td>
-                        <td>ver detalles</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="${project.percentyTaskFinished}" aria-valuemin="0" aria-valuemax="${project.totalTask}" style="width:${project.percentyTaskFinished}%">
+                                    ${project.percentyTaskFinished}%
+                                </div>
+                            </div>
+                        </td>
+                        <td><prettytime:display date="${project.creationDate}"/></td>
+                        <td><g:link action="detailProject" params="[id:project.id]">detalles</g:link></td>
                     </tr>
                 </g:each>
             </tbody>
