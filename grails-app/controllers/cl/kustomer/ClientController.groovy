@@ -51,7 +51,7 @@ class ClientController {
             }
             //===================================================
             detailProjectMap.totalTask = totalTask
-            detailProjectMap.percentyTaskFinished = percentyTaskFinished
+            detailProjectMap.percentyTaskFinished = percentyTaskFinished.round()
 
             listProjectForUser.add(detailProjectMap)
         }
